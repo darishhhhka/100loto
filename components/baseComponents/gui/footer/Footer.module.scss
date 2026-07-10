@@ -1,0 +1,9 @@
+@use "@styles/base" as *;
+
+.footer {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  background-color: $TEXT;
+  overflow: hidden;
+}

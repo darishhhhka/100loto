@@ -1,0 +1,140 @@
+@use "@styles/base" as *;
+
+.intro {
+  @mixin mod($mod) {
+    @include modifier("intro", $mod) {
+      @content;
+    }
+  }
+  @mixin mods($mods...) {
+    @each $mod in $mods {
+      .intro_#{$mod} & {
+        @content;
+      }
+    }
+  }
+
+  margin: auto;
+  max-width: 100%;
+  @include options(
+    (
+      width: (
+        $DESIGN-W,
+        $DESIGN-W-M,
+        $DESIGN-W-T,
+      ),
+      padding: (
+        192px 75px 187px,
+        130px 28px 126px,
+        313px 74px 308px,
+      ),
+    )
+  );
+  box-sizing: border-box;
+
+  &__title {
+    font-family: $TITLE-FONT;
+    @include options(
+      (
+        margin: (
+          0 0 13px,
+          0 0 7px,
+          0 0 16px,
+        ),
+        font-size: (
+          96px,
+          32px,
+          80px,
+        ),
+      )
+    );
+    line-height: 1.2;
+    white-space: pre-line;
+  }
+
+  &__list {
+    display: inline-flex;
+    position: relative;
+    @include options(
+      (
+        height: (
+          140px,
+          45px,
+          105px,
+        ),
+        margin: (
+          0 0 44px,
+          0 0 34px,
+          0 0 34px,
+        ),
+      )
+    );
+    box-sizing: border-box;
+  }
+
+  &__button {
+    display: flex;
+  }
+
+  &__listBlock {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    font-family: $TITLE-FONT;
+    @include options(
+      (
+        padding: (
+          0 57px,
+          0 16px,
+          0 38px,
+        ),
+        font-size: (
+          96px,
+          32px,
+          80px,
+        ),
+      )
+    );
+    text-transform: uppercase;
+    background-color: $RED;
+    color: $WHITE;
+    font-weight: 700;
+    box-sizing: border-box;
+
+    span {
+      display: inline-block;
+      white-space: nowrap;
+
+      &:after {
+        content: "";
+      }
+    }
+  }
+
+  &__listBorder {
+    position: absolute;
+    top: 100%;
+    @include options(
+      (
+        right: (
+          48px,
+          34px,
+          41px,
+        ),
+        width: (
+          50px,
+          17px,
+          41px,
+        ),
+        height: (
+          50px,
+          17px,
+          41px,
+        ),
+      )
+    );
+  }
+}
