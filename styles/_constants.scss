@@ -1,15 +1,14 @@
 /**
  * breakpoints
  */
-$MOBILE: 320px;
+$MOBILE: 380px;
 $TABLET: 768px;
-$DESKTOP: 1025px;
-$DESKTOP-BIG: 1440px;
+$DESKTOP: 1024px;
 
 /**
  * font-family
  */
-$BASE-FONT: Arial, sans-serif;
+$BASE-FONT: "Montserrat", Arial, sans-serif;
 $TITLE-FONT: $BASE-FONT;
 
 /**
@@ -17,6 +16,8 @@ $TITLE-FONT: $BASE-FONT;
  */
 $WHITE: #ffffff;
 $BLACK: #000000;
+$RED: #e3010f;
+$YELLOW: #ffcd17;
 
 $BG: $WHITE;
 $FG: $BLACK;
@@ -54,9 +55,9 @@ $FW-HEAVY: 900;
  */
 $DESIGN-W-R: 2200px;
 $DESIGN-W: 1440px;
-$DESIGN-H: 700px;
-$DESIGN-W-M: 402px;
-$DESIGN-H-M: 736px;
+$DESIGN-H: 780px;
+$DESIGN-W-M: 414px;
+$DESIGN-H-M: 911px;
 $DESIGN-W-T: 1024px;
 $DESIGN-H-T: 1366px;
 $DESIGN-W-M-2: 402px;

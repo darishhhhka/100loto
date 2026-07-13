@@ -1,6 +1,6 @@
-export const DESK_B = 1366;
+export const DESK_B = 1440;
 export const DESK_M = 1280;
-export const NOT_MOB = 1025;
+export const NOT_MOB = 1024;
 export const TABLET_W = 768;
 
 export const IPHONE_6_SIZE = {

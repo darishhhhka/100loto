@@ -1,31 +1,43 @@
+import React from "react";
 import * as PropTypes from "prop-types";
 import classNames from "classnames";
 import styles from "./Intro.module.scss";
-import {TypeAnimation} from "react-type-animation";
-import CustomButton from "../customButton/CustomButton";
-import PS from "@PS";
-const {safeHTML, image} = PS.frontend;
+import Header from "@/components/header/Header";
+import {intro} from "@/constants/copyright";
 
-export default function Intro({className, title, wordList, button}) {
-  const sequence = [];
-  wordList.forEach((word, index) => {
-    sequence.push(word.text);
-    sequence.push(1000);
-  });
-
+export default function Intro({className, children}) {
   return (
-    <section className={classNames(styles.intro, className)}>
-      <h2 className={classNames(styles.intro__title)}>{safeHTML(title)}</h2>
-      <div className={classNames(styles.intro__list)}>
-        <img src={image("intro/dec.svg")} className={classNames(styles.intro__listBorder)} />
-        <div className={classNames(styles.intro__listBlock)}>
-          <TypeAnimation sequence={sequence} wrapper="span" speed={50} repeat={Infinity} />
+    <div className={classNames(styles.intro, className)}>
+      <div className={styles.intro_bg_red}></div>
+      <div className={styles.intro_bg_img}></div>
+      <Header />
+      <div className={styles.intro__content}>
+        <h1 className={styles.intro__title}>{intro.title}</h1>
+        <div className={styles.intro__list}>
+          {intro.list.map(t => (
+            <div className={classNames(styles.intro__wrapItem, t.style && styles[t.style])}>
+              <div className={classNames(styles.intro__itemText)}>
+                {t.content.map(c => (
+                  <span className={classNames(styles.intro__text, c.style && styles[c.style])}>{c.text}</span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+        <button className={styles.intro__btn}>{intro.button.text}</button>
+        <div className={styles.intro__ntv}>
+          <img {...intro.ntv.logo} />
+          <p>{intro.ntv.text}</p>
         </div>
       </div>
-      <CustomButton {...button} />
-    </section>
+      <div>
+        <img className={styles.intro__menImg} src={"/static/images/intro-men.png"} alt="intro-men" />
+      </div>
+    </div>
   );
 }
+
 Intro.propTypes = {
   className: PropTypes.string,
+  children: PropTypes.node,
 };

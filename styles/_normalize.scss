@@ -6,9 +6,6 @@
 // использовать options из mixins нельзя из-за того, что там используется :global() доступный только в .module.scss
 @mixin option($name, $value) {
   #{$name}: vw($value);
-  @include DESKTOP-BIG {
-    #{$name}: $value;
-  }
   @include DESKTOP {
     &.portrait,
     .portrait & {
@@ -77,6 +74,10 @@ h6 {
 hr {
   height: 1px;
   width: 100%;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 a,

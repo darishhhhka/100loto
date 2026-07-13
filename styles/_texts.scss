@@ -6,7 +6,7 @@
 
 %DEFAULT {
   font-family: $BASE-FONT;
-  @include option(font-size, $PIC);
+  @include option(font-size, 16px);
 
   color: $TEXT;
 }
@@ -15,7 +15,11 @@
   font-family: $TITLE-FONT;
   @include options(
     (
-      font-size: (80px, 32px, 64px),
+      font-size: (
+        80px,
+        32px,
+        64px,
+      ),
     )
   );
   line-height: 1.2;

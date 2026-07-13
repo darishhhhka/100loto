@@ -21,7 +21,7 @@
   }
 }
 @mixin DESKTOP() {
-  @media screen and (min-width: $DESKTOP) and (max-width: $DESKTOP-BIG - 1) {
+  @media screen and (min-width: $DESKTOP) {
     @content;
   }
 }
@@ -49,18 +49,6 @@
 }
 @mixin NOT-DESK() {
   @media screen and (max-width: $DESKTOP - 1) {
-    @content;
-  }
-}
-
-@mixin DESKTOP-BIG() {
-  @media screen and (min-width: $DESKTOP-BIG) {
-    @content;
-  }
-}
-
-@mixin MIN-MOBILE() {
-  @media screen and (max-width: 450px) and (max-height: 735px) {
     @content;
   }
 }

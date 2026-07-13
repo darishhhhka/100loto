@@ -320,9 +320,7 @@
 
 @mixin options-desk($properties) {
   @include options-iterate($properties, vw);
-  @include DESKTOP-BIG {
-    @include options-iterate($properties);
-  }
+
   @include DESKTOP {
     :global(.portrait) & {
       @include options-iterate($properties, vw);

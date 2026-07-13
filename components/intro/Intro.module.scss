@@ -1,6 +1,128 @@
 @use "@styles/base" as *;
 
 .intro {
+  position: relative;
+  height: 100vh;
+  color: $WHITE;
+  width: 100vw;
+  @include option(padding-left, 41, 20);
+  @include option(padding-right, 41, 20);
+
+  &_bg_red {
+    position: absolute;
+    background:
+      url("/static/images/intro-pattern.svg") no-repeat,
+      linear-gradient(125deg, #ff3030, 70%, #ffb18f);
+    left: 0;
+    top: 0;
+    bottom: 0;
+    @include option(width, 801, 414);
+    z-index: -1;
+  }
+
+  &_bg_img {
+    position: absolute;
+    background:
+      url("/static/images/intro-car.png") no-repeat bottom center,
+      linear-gradient(#efd7bd00, #868ab0),
+      url("/static/images/intro-rocket.png") no-repeat center,
+      url("/static/images/cosmos.png") no-repeat center/cover;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    @include option(width, 639, 414);
+    z-index: -1;
+  }
+
+  &__content {
+    @include option(padding-left, 55, 16);
+    height: 100%;
+
+    text-transform: uppercase;
+    font-weight: $FW-EXTRA_BOLD;
+    @include option(max-width, 811, 423);
+  }
+
+  &__title {
+    @include option(font-size, 67, 51);
+    font-weight: $FW-EXTRA_BOLD;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    @include option(gap, 20, 10);
+    @include option(margin-bottom, 40, 15);
+  }
+
+  &__wrapItem {
+    display: flex;
+    align-items: start;
+    @include option(gap, 13, 7);
+
+    &::before {
+      content: url("/static/images/triangle.png");
+    }
+  }
+
+  &__text {
+    display: block;
+    @include option(font-size, 42, 25);
+
+    &_bg {
+      background-color: $WHITE;
+      color: #e3010f;
+      @include option(font-size, 58, 32);
+      border-radius: 7px;
+      padding: 0 14px;
+    }
+
+    &_pos_abs {
+      z-index: 100;
+      position: absolute;
+      background-color: $RED;
+      font-size: 51px;
+      padding: 8px;
+      border-radius: 7px;
+      bottom: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+
+      &::before {
+        content: "";
+      }
+    }
+  }
+
+  &__btn {
+    border: none;
+    background-color: $YELLOW;
+    color: $BLACK;
+    @include option(font-size, 19, 22);
+    font-weight: $FW-SEMI_BOLD;
+    padding: 28px 92px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+
+  &__ntv {
+    font-size: 13px;
+    font-weight: $FW-SEMI_BOLD;
+    text-transform: none;
+    display: flex;
+    align-items: center;
+    @include option(gap, 16, 12);
+    @include option(width, 325, 321);
+  }
+
+  &__menImg {
+    @include option(width, 482, 284);
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-22%);
+  }
+
   @mixin mod($mod) {
     @include modifier("intro", $mod) {
       @content;
@@ -12,129 +134,5 @@
         @content;
       }
     }
-  }
-
-  margin: auto;
-  max-width: 100%;
-  @include options(
-    (
-      width: (
-        $DESIGN-W,
-        $DESIGN-W-M,
-        $DESIGN-W-T,
-      ),
-      padding: (
-        192px 75px 187px,
-        130px 28px 126px,
-        313px 74px 308px,
-      ),
-    )
-  );
-  box-sizing: border-box;
-
-  &__title {
-    font-family: $TITLE-FONT;
-    @include options(
-      (
-        margin: (
-          0 0 13px,
-          0 0 7px,
-          0 0 16px,
-        ),
-        font-size: (
-          96px,
-          32px,
-          80px,
-        ),
-      )
-    );
-    line-height: 1.2;
-    white-space: pre-line;
-  }
-
-  &__list {
-    display: inline-flex;
-    position: relative;
-    @include options(
-      (
-        height: (
-          140px,
-          45px,
-          105px,
-        ),
-        margin: (
-          0 0 44px,
-          0 0 34px,
-          0 0 34px,
-        ),
-      )
-    );
-    box-sizing: border-box;
-  }
-
-  &__button {
-    display: flex;
-  }
-
-  &__listBlock {
-    display: inline-flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    position: relative;
-    height: 100%;
-    font-family: $TITLE-FONT;
-    @include options(
-      (
-        padding: (
-          0 57px,
-          0 16px,
-          0 38px,
-        ),
-        font-size: (
-          96px,
-          32px,
-          80px,
-        ),
-      )
-    );
-    text-transform: uppercase;
-    background-color: $RED;
-    color: $WHITE;
-    font-weight: 700;
-    box-sizing: border-box;
-
-    span {
-      display: inline-block;
-      white-space: nowrap;
-
-      &:after {
-        content: "";
-      }
-    }
-  }
-
-  &__listBorder {
-    position: absolute;
-    top: 100%;
-    @include options(
-      (
-        right: (
-          48px,
-          34px,
-          41px,
-        ),
-        width: (
-          50px,
-          17px,
-          41px,
-        ),
-        height: (
-          50px,
-          17px,
-          41px,
-        ),
-      )
-    );
   }
 }

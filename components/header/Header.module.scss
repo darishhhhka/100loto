@@ -1,0 +1,46 @@
+@use "@styles/base" as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  @include option(padding-top, 50, 20);
+  color: $WHITE;
+
+  &__logo {
+    @include option(width, 95, 64);
+  }
+
+  &__navbar {
+    justify-self: center;
+    display: flex;
+    text-transform: uppercase;
+    @include option(gap, 40);
+    @include option(font-size, 12);
+
+    @include MOBILE {
+      display: none;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__img {
+    @include option(width, 228, 221);
+  }
+
+  //@mixin mod($mod) {
+  //  @include modifier("header", $mod) {
+  //    @content;
+  //  }
+  //}
+  //@mixin mods($mods...) {
+  //  @each $mod in $mods {
+  //    .header_#{$mod} & {
+  //      @content;
+  //    }
+  //  }
+  //}
+}

@@ -1,0 +1,37 @@
+@use "constants.scss" as *;
+
+@font-face {
+  font-family: "Montserrat";
+  src:
+    url("../fonts/Montserrat-SemiBold.woff2") format("woff2"),
+    url("../fonts/Montserrat-SemiBold.woff") format("woff"),
+    url("../fonts/Montserrat-SemiBold.ttf") format("ttf");
+  font-weight: $FW-SEMI_BOLD;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src:
+    url("../fonts/Montserrat-ExtraBold.woff2") format("woff2"),
+    url("../fonts/Montserrat-ExtraBold.woff") format("woff"),
+    url("../fonts/Montserrat-ExtraBold.ttf") format("ttf");
+  font-weight: $FW-EXTRA_BOLD;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src:
+    url("../fonts/Montserrat-Bold.woff2") format("woff2"),
+    url("../fonts/Montserrat-Bold.woff") format("woff"),
+    url("../fonts/Montserrat-Bold.ttf") format("ttf");
+  font-weight: $FW-BOLD;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src:
+    url("../fonts/Montserrat-Regular.woff2") format("woff2"),
+    url("../fonts/Montserrat-Regular.woff") format("woff"),
+    url("../fonts/Montserrat-Regular.ttf") format("ttf");
+  font-weight: $FW-NORMAL;
+}
