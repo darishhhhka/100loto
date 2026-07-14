@@ -1,0 +1,60 @@
+@use "@styles/base" as *;
+
+.downloadApp {
+  @mixin mod($mod) {
+    @include modifier("downloadApp", $mod) {
+      @content;
+    }
+  }
+  @mixin mods($mods...) {
+    @each $mod in $mods {
+      .downloadApp_#{$mod} & {
+        @content;
+      }
+    }
+  }
+  @include sectionLayer(51px, 40px);
+  @include option(padding, 75px 140px 0px 140px, 47px 19px 0px 19px);
+  background:
+    url("/static/images/bg-color-pattern.svg") no-repeat right/contain,
+    linear-gradient(to bottom right, #fff8f1, #ffe2b6);
+
+  @include MOBILE {
+    background: linear-gradient(to bottom right, #fff8f1, #ffe2b6);
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__cardList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @include option(width, 457, 374);
+    @include option(gap, 17, 14);
+    @include option(margin-bottom, 48, 38);
+  }
+
+  &__storeList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    //flex-direction: column;
+    flex-wrap: wrap;
+    @include option(row-gap, 12, 13);
+    @include option(column-gap, 15);
+    width: min-content;
+  }
+
+  &__img {
+    z-index: 1;
+    display: block;
+    bottom: 0;
+    @include option(width, 564, 387);
+    //@include option(height, 740, 454);
+    @include MOBILE {
+      transform: rotate(-6deg) translateY(100px);
+    }
+  }
+}

@@ -1,0 +1,24 @@
+@use "@styles/base" as *;
+
+.button {
+  border: none;
+  background-color: $YELLOW;
+  color: $BLACK;
+  @include option(font-size, 19, 22);
+  font-weight: $FW-SEMI_BOLD;
+  padding: 28px 92px;
+  border-radius: 4px;
+
+  @mixin mod($mod) {
+    @include modifier("button", $mod) {
+      @content;
+    }
+  }
+  @mixin mods($mods...) {
+    @each $mod in $mods {
+      .button_#{$mod} & {
+        @content;
+      }
+    }
+  }
+}

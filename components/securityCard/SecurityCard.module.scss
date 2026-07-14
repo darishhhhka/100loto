@@ -1,0 +1,49 @@
+@use "@styles/base" as *;
+
+.securityCard {
+  @mixin mod($mod) {
+    @include modifier("securityCard", $mod) {
+      @content;
+    }
+  }
+  @mixin mods($mods...) {
+    @each $mod in $mods {
+      .securityCard_#{$mod} & {
+        @content;
+      }
+    }
+  }
+
+  display: flex;
+  flex-direction: column;
+  @include option(gap, 10, 26);
+  background-color: $WHITE;
+  border-radius: 6px;
+  @include option(font-size, 13, 17);
+  @include option(width, 270);
+  @include option(height, 237, 350);
+  @include option(padding, 19px 17px, 31px 19px);
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include option(gap, 10);
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-weight: $FW-BOLD;
+    @include option(font-size, 13, 17);
+  }
+
+  &__description {
+    @include option(line-height, 17);
+  }
+
+  &__children {
+    display: flex;
+    @include option(gap, 21);
+    margin-top: auto;
+  }
+}

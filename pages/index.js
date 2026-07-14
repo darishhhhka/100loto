@@ -2,9 +2,13 @@ import React from "react";
 import PageDescription from "@/components/baseComponents/head/pageDescription/PageDescription";
 import defaultPage from "@/constants/page-description";
 import CustomHeader from "@/components/baseComponents/gui/customHeader/CustomHeader";
-import Footer from "@/components/baseComponents/gui/footer/Footer";
+import Footer from "@/components/footer/Footer";
 import {footerContent, header} from "@/constants/copyright";
 import Intro from "@/components/intro/Intro";
+import Results from "@/components/results/Results";
+import Security from "@/components/security/Security";
+import DownloadApp from "@/components/downloadApp/DownloadApp";
+import About from "@/components/about/About";
 
 export default function Home() {
   return (
@@ -12,7 +16,11 @@ export default function Home() {
       <PageDescription {...defaultPage} />
       {/*<CustomHeader {...header} />*/}
       <Intro />
-      <Footer {...footerContent} />
+      <Results />
+      <About />
+      <Security />
+      <DownloadApp />
+      <Footer />
     </>
   );
 }

@@ -4,6 +4,7 @@ import classNames from "classnames";
 import styles from "./Intro.module.scss";
 import Header from "@/components/header/Header";
 import {intro} from "@/constants/copyright";
+import Button from "@/components/button/Button";
 
 export default function Intro({className, children}) {
   return (
@@ -24,7 +25,7 @@ export default function Intro({className, children}) {
             </div>
           ))}
         </div>
-        <button className={styles.intro__btn}>{intro.button.text}</button>
+        <Button className={styles.intro__btn}>{intro.button.text}</Button>
         <div className={styles.intro__ntv}>
           <img {...intro.ntv.logo} />
           <p>{intro.ntv.text}</p>

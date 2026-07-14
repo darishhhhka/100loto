@@ -11,6 +11,16 @@
 @forward "@styles/mixins/triangle";
 @forward "@styles/mixins/sequence-keyframes";
 
+@mixin sectionLayer($gap: 55px, $gap-m: 42px) {
+  width: 100vw;
+  @include option(padding, 75px 140px, 47px 19px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include option(gap, $gap, $gap-m);
+  gap: $gap;
+}
+
 @mixin modifier($class, $mod) {
   $modTmp: string.unquote("");
   @if meta.type-of($mod) == list {

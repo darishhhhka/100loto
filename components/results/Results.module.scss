@@ -1,0 +1,42 @@
+@use "@styles/base" as *;
+
+.results {
+  @include sectionLayer(58px, 40px);
+  background-color: #ff3030;
+  @include option(padding, 75px 140px, 47px 19px);
+  background:
+    url("/static/images/bg-pattern.svg") no-repeat right/contain,
+    linear-gradient(to right, #ff684a, #ff3030);
+
+  &__list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    @include option(gap, 25, 27);
+
+    @include TABLET {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include MOBILE {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__btn {
+    align-self: center;
+  }
+
+  @mixin mod($mod) {
+    @include modifier("results", $mod) {
+      @content;
+    }
+  }
+  @mixin mods($mods...) {
+    @each $mod in $mods {
+      .results_#{$mod} & {
+        @content;
+      }
+    }
+  }
+}

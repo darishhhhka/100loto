@@ -49,7 +49,8 @@ const CustomButton = forwardRef(function (
     <Button
       ref={ref}
       type={type}
-      className={classNames(styles.customButton, ...otherClasses, ...customButtonClasses)}
+      // className={classNames(styles.customButton, ...otherClasses, ...customButtonClasses)}
+      className={styles.customButton}
       onClick={onClick}
       disabled={isDisabled || disabled}
       tag={tag}
@@ -57,20 +58,22 @@ const CustomButton = forwardRef(function (
       target={target}
       {...rest}
     >
-      <div className={classNames(styles.customButton__border, styles.customButton__border_right)} />
-      <div className={classNames(styles.customButton__border, styles.customButton__border_full)} />
-      <div className={classNames(styles.customButton__border, styles.customButton__border_bottom)} />
-      {children ?? (
-        <div className={styles.customButton__block}>
-          {(img || icon) && (
-            <div className={styles.customButton__image}>
-              {img && <img src={img} />}
-              {icon && <Icon name={icon} />}
-            </div>
-          )}
-          {text && <div className={styles.customButton__text}>{safeHTML(text)}</div>}
-        </div>
-      )}
+      {children}
+      {/*<div className={classNames(styles.customButton__border, styles.customButton__border_right)} />*/}
+      {/*<div className={classNames(styles.customButton__border, styles.customButton__border_full)} />*/}
+      {/*<div className={classNames(styles.customButton__border, styles.customButton__border_bottom)} />*/}
+      {/*{children ?? (*/}
+      {/*  <div className={styles.customButton__block}>*/}
+      {/*    {children}*/}
+      {/*    /!*{(img || icon) && (*!/*/}
+      {/*    /!*  <div className={styles.customButton__image}>*!/*/}
+      {/*    /!*    {img && <img src={img} />}*!/*/}
+      {/*    /!*    {icon && <Icon name={icon} />}*!/*/}
+      {/*    /!*  </div>*!/*/}
+      {/*    /!*)}*!/*/}
+      {/*    /!*{text && <div className={styles.customButton__text}>{safeHTML(text)}</div>}*!/*/}
+      {/*  </div>*/}
+      {/*)}*/}
     </Button>
   );
 });

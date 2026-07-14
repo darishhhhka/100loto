@@ -1,0 +1,64 @@
+@use "@styles/base" as *;
+
+.about {
+  @mixin mod($mod) {
+    @include modifier("about", $mod) {
+      @content;
+    }
+  }
+  @mixin mods($mods...) {
+    @each $mod in $mods {
+      .about_#{$mod} & {
+        @content;
+      }
+    }
+  }
+
+  @include sectionLayer(107px, 49px);
+  background: radial-gradient(circle at 50% 70%, #ffffff, #ffe4b0);
+  font-weight: $FW-BOLD;
+
+  &__step {
+    display: flex;
+    @include option(gap, 20, 38);
+  }
+
+  &__number {
+    color: $RED;
+    @include option(font-size, 52px);
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    @include option(gap, 12);
+  }
+
+  &__text {
+    @include option(font-size, 18px);
+    @include option(max-width, 300);
+    &_red {
+      color: $RED;
+    }
+  }
+
+  &__imgWrap {
+    position: relative;
+    @include option(width, 203px, 287px);
+    @include option(height, 203px, 287px);
+    background-color: $WHITE;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__img {
+    //width: 100%;
+    &_abs {
+      position: absolute;
+      top: 35%;
+      left: 20%;
+    }
+  }
+}

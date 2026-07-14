@@ -1,0 +1,45 @@
+@use "@styles/base" as *;
+
+.security {
+  @mixin mod($mod) {
+    @include modifier("security", $mod) {
+      @content;
+    }
+  }
+  @mixin mods($mods...) {
+    @each $mod in $mods {
+      .security_#{$mod} & {
+        @content;
+      }
+    }
+  }
+  @include sectionLayer(56px, 22px);
+  background: linear-gradient(to bottom right, #6a0c0c, #320101);
+  @include option(padding, 75px 140px, 47px 19px);
+  @include option(gap, 56, 42);
+
+  &__title {
+    @include option(max-width, 945, 377);
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    @include option(gap, 20);
+  }
+
+  &__list {
+    @include option(width, 555, 414);
+    display: flex;
+    flex-wrap: wrap;
+    //grid-template-columns: repeat(2, 1fr);
+    @include option(gap, 12px);
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include option(gap, 28);
+  }
+}

@@ -1,0 +1,41 @@
+@use "@styles/base" as *;
+
+.downloadStoreCard {
+  @mixin mod($mod) {
+    @include modifier("downloadStoreCard", $mod) {
+      @content;
+    }
+  }
+  @mixin mods($mods...) {
+    @each $mod in $mods {
+      .downloadStoreCard_#{$mod} & {
+        @content;
+      }
+    }
+  }
+
+  @include option(width, 186, 164);
+  background-color: $BLACK;
+  border-radius: 8px;
+  color: $WHITE;
+  @include option(padding, 11px 17px, 10px 15px);
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  //display: flex;
+  align-items: center;
+  @include option(gap, 15, 13);
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  &__forPhone {
+    @include option(font-size, 11, 10);
+  }
+
+  &__phone {
+    @include option(font-size, 22, 19);
+  }
+}

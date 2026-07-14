@@ -1,0 +1,54 @@
+@use "@styles/base" as *;
+
+.resultCard {
+  @mixin mod($mod) {
+    @include modifier("resultCard", $mod) {
+      @content;
+    }
+  }
+
+  @mixin mods($mods...) {
+    @each $mod in $mods {
+      .resultCard_#{$mod} & {
+        @content;
+      }
+    }
+  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include option(gap, 20, 22);
+  text-align: center;
+  flex: 1;
+
+  @include MOBILE {
+    flex-direction: row;
+  }
+
+  &__title {
+    width: max-content;
+    color: #ffcd17;
+    @include option(font-size, 48, 45);
+    font-weight: $FW-EXTRA_BOLD;
+  }
+
+  &__subtitle {
+    @include option(font-size, 18, 17);
+
+    &_bold {
+      display: block;
+      font-weight: $FW-BOLD;
+    }
+  }
+
+  &__subtitleText {
+    color: black;
+  }
+  &__subtitleIcon {
+    fill: white;
+  }
+
+  &__img {
+    @include option(width, 220, 162);
+  }
+}

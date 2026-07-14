@@ -47,6 +47,13 @@
   --button-block-border-color: var(--button-text-color);
   --button-path-color: var(--button-text-color);
 
+  background-color: $YELLOW;
+  color: $BLACK;
+  @include option(font-size, 19, 22);
+  font-weight: $FW-SEMI_BOLD;
+  padding: 28px 92px;
+  border-radius: 4px;
+
   &:disabled,
   &_disabled {
     pointer-events: none;
@@ -230,10 +237,10 @@
     --button-block-bg-color: transparent;
   }
 
-  &_linkGray {
-    @include option(--button-font-size, 14px, 18px, 24px);
-    --button-text-color: #{$GRAY};
-  }
+  //&_linkGray {
+  //  @include option(--button-font-size, 14px, 18px, 24px);
+  //  --button-text-color: #{$GRAY};
+  //}
 
   &_soc {
     display: inline-flex;
@@ -273,18 +280,18 @@
   }
 
   &__block {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: inline-flex;
-    flex-direction: var(--button-block-flex-direction, row);
-    justify-content: center;
-    align-items: center;
-    grid-gap: var(--button-block-grid-gap, 0);
-    padding: var(--button-block-padding, 0);
-    @include border($d: 2px, $t: 2px, $m: 2px);
-    border-color: var(--button-block-border-color, #{$RED});
-    background-color: var(--button-block-bg-color, #{$WHITE});
+    //position: relative;
+    //width: 100%;
+    //height: 100%;
+    //display: inline-flex;
+    //flex-direction: var(--button-block-flex-direction, row);
+    //justify-content: center;
+    //align-items: center;
+    //grid-gap: var(--button-block-grid-gap, 0);
+    //padding: var(--button-block-padding, 0);
+    //@include border($d: 2px, $t: 2px, $m: 2px);
+    //border-color: var(--button-block-border-color, #{$RED});
+    //background-color: var(--button-block-bg-color, #{$WHITE});
     transition:
       transform 0.3s ease-in-out,
       opacity 0.3s ease-in-out,
