@@ -6,7 +6,7 @@
   color: $BLACK;
   @include option(font-size, 19, 22);
   font-weight: $FW-SEMI_BOLD;
-  padding: 28px 92px;
+  @include option(padding, 28px 92px);
   border-radius: 4px;
 
   @mixin mod($mod) {

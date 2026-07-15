@@ -15,8 +15,9 @@ export default function Results({className, children}) {
       <div className={styles.results__list}>
         {results.list.map((res, index) => (
           <ResultCard
+            className={index === 3 && styles.results__card_left}
             key={`result-card-${index}`}
-            img={res.img}
+            img={res.image}
             title={res.title}
             subtitle={res.subtitle}
             subtitleBold={res.subtitleBold}

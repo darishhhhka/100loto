@@ -1,0 +1,51 @@
+@use "@styles/base" as *;
+
+.moreWinners {
+  @mixin mod($mod) {
+    @include modifier("moreWinners", $mod) {
+      @content;
+    }
+  }
+  @mixin mods($mods...) {
+    @each $mod in $mods {
+      .moreWinners_#{$mod} & {
+        @content;
+      }
+    }
+  }
+
+  z-index: 2;
+  @include sectionLayer;
+  justify-content: space-between;
+  background-color: #002655;
+  @include option(height, 780);
+
+  &__title {
+    @include option(font-size, 65, 34);
+    @include option(width, 535, 379, 535);
+  }
+
+  &__content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    @include option(gap, 20);
+    //align-self: start;
+  }
+
+  &__ntv {
+    @include MOBILE {
+      order: -1;
+      margin-bottom: auto;
+    }
+  }
+
+  &__btn {
+    @include MOBILE {
+      align-self: center;
+    }
+  }
+}

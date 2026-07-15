@@ -29,6 +29,10 @@
     justify-content: center;
   }
 
+  &__info {
+    @include option(margin-bottom, 62px, 18px);
+  }
+
   &__cardList {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -40,7 +44,6 @@
   &__storeList {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    //flex-direction: column;
     flex-wrap: wrap;
     @include option(row-gap, 12, 13);
     @include option(column-gap, 15);
@@ -48,13 +51,10 @@
   }
 
   &__img {
+    display: flex;
+    justify-content: center;
     z-index: 1;
-    display: block;
-    bottom: 0;
+    align-self: end;
     @include option(width, 564, 387);
-    //@include option(height, 740, 454);
-    @include MOBILE {
-      transform: rotate(-6deg) translateY(100px);
-    }
   }
 }

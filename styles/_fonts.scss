@@ -35,3 +35,9 @@
     url("/fonts/Montserrat-Regular.ttf") format("ttf");
   font-weight: $FW-NORMAL;
 }
+
+@font-face {
+  font-family: "SF UI Text";
+  src: url("/fonts/sf-ui-text-regular.ttf") format("truetype");
+  font-weight: $FW-NORMAL;
+}

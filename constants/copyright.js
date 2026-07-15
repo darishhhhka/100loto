@@ -1,6 +1,6 @@
 export const header = {
   logo: {
-    src: "/static/images/logo.svg",
+    src: "/static/images/intro/logo.svg",
     alt: "logo",
   },
   menuList: [
@@ -26,27 +26,28 @@ export const header = {
     },
   ],
   img: {
-    src: "/static/images/header-img.svg",
+    src: "/static/images/intro/header-img.svg",
     alt: "header-img",
   },
 };
 
 export const intro = {
   title: "Разыграем",
-  list: [
+  content: [
     {
-      content: [
+      priz: [
         {
           text: "автомобиль",
           style: "intro__text_bg",
         },
         {
           text: "премиум-класса",
+          style: "intro__text_bg-m",
         },
       ],
     },
     {
-      content: [
+      priz: [
         {
           text: "Джекпот 800 000 000 ₽",
         },
@@ -54,13 +55,31 @@ export const intro = {
       style: "intro__text_pos_abs",
     },
     {
-      content: [
+      priz: [
         {
           text: "призы по 300 000 ₽",
         },
       ],
     },
   ],
+
+  triangleIcon: {
+    img: {
+      src: "/static/images/intro/triangle.svg",
+      alt: "triangle-icon",
+    },
+
+    sourceData: {
+      sources: [
+        {
+          srcSet: "/static/images/intro/triangleMobile.svg",
+          type: "image/png",
+          media: "(max-width: 1024px)",
+        },
+      ],
+    },
+  },
+
   button: {
     text: "Участвовать",
   },
@@ -71,40 +90,103 @@ export const intro = {
     },
     text: "Смотрите трансляцию 1435-го тиража 10 апреля на НТВ",
   },
+  imgMen: {
+    img: {
+      src: "/static/images/intro/men.png",
+      alt: "men",
+    },
+    sourceData: {
+      sources: [
+        {
+          srcSet: "/static/images/intro/menMobile.png",
+          type: "image/png",
+          media: "(max-width: 1024px)",
+        },
+      ],
+    },
+  },
 };
 
 export const results = {
   title: "Итоги 2021 года",
   list: [
     {
-      img: {
-        src: "/static/images/calendar.png",
-        alt: "calendar",
+      image: {
+        img: {
+          src: "/static/images/results/calendar.png",
+          alt: "calendar",
+        },
+        sourceData: {
+          sources: [
+            {
+              srcSet: "/static/images/results/calendarMobile.png",
+              type: "image/png",
+              media: "(max-width: 768px)",
+            },
+          ],
+        },
       },
+
       title: ">169 млн",
       subtitle: "билетов куплено",
     },
     {
-      img: {
-        src: "/static/images/cup.png",
-        alt: "cup",
+      image: {
+        img: {
+          src: "/static/images/results/cup.png",
+          alt: "cup",
+        },
+        sourceData: {
+          sources: [
+            {
+              srcSet: "/static/images/results/cupMobile.png",
+              type: "image/png",
+              media: "(max-width: 768px)",
+            },
+          ],
+        },
       },
+
       title: "~8,4 млрд",
       subtitle: "рублей выиграно",
     },
     {
-      img: {
-        src: "/static/images/vault.png",
-        alt: "vault",
+      image: {
+        img: {
+          src: "/static/images/results/safe.png",
+          alt: "safe",
+        },
+        sourceData: {
+          sources: [
+            {
+              srcSet: "/static/images/results/safeMobile.png",
+              type: "image/png",
+              media: "(max-width: 768px)",
+            },
+          ],
+        },
       },
+
       title: "703",
       subtitle: "миллионера",
     },
     {
-      img: {
-        src: "/static/images/mark.png",
-        alt: "mark",
+      image: {
+        img: {
+          src: "/static/images/results/marka.png",
+          alt: "marka",
+        },
+        sourceData: {
+          sources: [
+            {
+              srcSet: "/static/images/results/markaMobile.png",
+              type: "image/png",
+              media: "(max-width: 768px)",
+            },
+          ],
+        },
       },
+
       title: "«Русское лото»",
       subtitle: "получило премию",
       subtitleBold: "«Марка № 1 в России»",
@@ -119,35 +201,78 @@ export const about = {
   title: "Как участвовать",
   steps: [
     {
-      img: [
+      images: [
         {
-          src: "/static/images/computer.png",
-          alt: "computer",
+          img: {
+            src: "/static/images/about/computer.png",
+            alt: "computer",
+          },
+          sourceData: {
+            sources: [
+              {
+                srcSet: "/static/images/about/computerMobile.png",
+                type: "image/png",
+                media: "(max-width: 768px)",
+              },
+            ],
+          },
         },
       ],
-
       text: "Выберите билет",
     },
     {
-      img: [
+      images: [
         {
-          src: "/static/images/hand.png",
-          alt: "hand",
+          img: {
+            src: "/static/images/about/hand.png",
+            alt: "hand",
+          },
+          sourceData: {
+            sources: [
+              {
+                srcSet: "/static/images/about/handMobile.png",
+                type: "image/png",
+                media: "(max-width: 768px)",
+              },
+            ],
+          },
         },
       ],
 
       text: "Оплатите картой или другим удобным способом",
     },
     {
-      img: [
+      images: [
         {
-          src: "/static/images/aboutPhone.png",
-          alt: "phone",
+          img: {
+            src: "/static/images/about/phone.png",
+            alt: "phone",
+          },
+          sourceData: {
+            sources: [
+              {
+                srcSet: "/static/images/about/phoneMobile.png",
+                type: "image/png",
+                media: "(max-width: 768px)",
+              },
+            ],
+          },
         },
         {
-          src: "/static/images/aboutPult.png",
-          alt: "pult",
+          img: {
+            src: "/static/images/about/pult.png",
+            alt: "pult",
+          },
           position: "abs",
+          sourceData: {
+            sources: [
+              {
+                srcSet: "/static/images/about/pultMobile.png",
+                type: "image/png",
+                media: "(max-width: 768px)",
+              },
+            ],
+          },
         },
       ],
 
@@ -158,13 +283,23 @@ export const about = {
       },
     },
     {
-      img: [
+      images: [
         {
-          src: "/static/images/aboutCup.png",
-          alt: "cup",
+          img: {
+            src: "/static/images/about/cup.png",
+            alt: "cup",
+          },
+          sourceData: {
+            sources: [
+              {
+                srcSet: "/static/images/about/cupMobile.png",
+                type: "image/png",
+                media: "(max-width: 768px)",
+              },
+            ],
+          },
         },
       ],
-
       text: "Насладитесь ожиданием, предвкушением и, возможно, радостью победы",
     },
   ],
@@ -310,8 +445,32 @@ export const downloadApp = {
     },
   ],
   phoneImg: {
-    src: "/static/images/phone.png",
-    alt: "phone",
+    img: {
+      src: "/static/images/downloadApp/iphone.png",
+      alt: "phone",
+    },
+    sourceData: {
+      sources: [
+        {
+          srcSet: "/static/images/downloadApp/iphoneMobile.png",
+          type: "image/png",
+          media: "(max-width: 1024px)",
+        },
+      ],
+    },
+  },
+};
+export const moreWinners = {
+  title: "Победителей будет больше!",
+  button: {
+    text: "Купить билеты",
+  },
+  ntv: {
+    logo: {
+      src: "/static/images/ntv-logo.png",
+      alt: "ntv-logo",
+    },
+    text: "Смотрите трансляцию 1435-го тиража 10 апреля на НТВ",
   },
 };
 
@@ -368,4 +527,12 @@ export const footer = {
       "ELA — объединение лотерейных компаний из Европы и соседних регионов.",
     ],
   },
+};
+
+export const ntv = {
+  logo: {
+    src: "/static/images/ntv-logo.png",
+    alt: "ntv-logo",
+  },
+  text: "Смотрите трансляцию 1435-го тиража 10 апреля на НТВ",
 };

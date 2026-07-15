@@ -1,0 +1,24 @@
+@use "@styles/base" as *;
+
+.ntv {
+  @mixin mod($mod) {
+    @include modifier("ntv", $mod) {
+      @content;
+    }
+  }
+  @mixin mods($mods...) {
+    @each $mod in $mods {
+      .ntv_#{$mod} & {
+        @content;
+      }
+    }
+  }
+
+  @include option(font-size, 13);
+  font-weight: $FW-SEMI_BOLD;
+  display: flex;
+  align-items: center;
+  @include option(gap, 16, 12);
+  @include option(width, 325, 321);
+  color: $WHITE;
+}

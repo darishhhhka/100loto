@@ -9,6 +9,7 @@ import Results from "@/components/results/Results";
 import Security from "@/components/security/Security";
 import DownloadApp from "@/components/downloadApp/DownloadApp";
 import About from "@/components/about/About";
+import MoreWinners from "@/components/moreWinners/MoreWinners";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <About />
       <Security />
       <DownloadApp />
+      <MoreWinners />
       <Footer />
     </>
   );

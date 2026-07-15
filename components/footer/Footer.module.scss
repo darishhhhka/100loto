@@ -1,7 +1,6 @@
 @use "@styles/base" as *;
 
 .footer {
-  z-index: 2;
   @include sectionLayer(86, 44);
   flex-direction: row;
   background-color: #0f1114;

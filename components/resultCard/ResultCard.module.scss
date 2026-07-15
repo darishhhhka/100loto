@@ -20,15 +20,14 @@
   @include option(gap, 20, 22);
   text-align: center;
   flex: 1;
-
   @include MOBILE {
     flex-direction: row;
   }
 
   &__title {
-    width: max-content;
+    @include option(width, 332, 232);
     color: #ffcd17;
-    @include option(font-size, 48, 45);
+    @include option(font-size, 48);
     font-weight: $FW-EXTRA_BOLD;
   }
 
@@ -48,7 +47,19 @@
     fill: white;
   }
 
+  &__imgWrap {
+    @include option(height, 203, 149);
+    @include option(width, 203, 149);
+    border-radius: 50%;
+    background-color: $WHITE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   &__img {
-    @include option(width, 220, 162);
+    //width: 100%;
+    height: 100%;
+    //@include option(width, 190px, 140px);
   }
 }

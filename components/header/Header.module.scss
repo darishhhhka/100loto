@@ -1,10 +1,11 @@
 @use "@styles/base" as *;
 
 .header {
+  width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: start;
-  @include option(padding-top, 50, 20);
+  @include option(padding, 45px 41px 0 41px, 19px 18px 0 18px);
   color: $WHITE;
 
   &__logo {

@@ -4,21 +4,32 @@ import classNames from "classnames";
 import styles from "./About.module.scss";
 import Title from "@/components/title/Title";
 import {about} from "@/constants/copyright";
+import Picture from "@/components/baseComponents/gui/picture/Picture";
 
 export default function About({className, children}) {
   return (
     <section className={classNames(styles.about, className)}>
       <Title color="red">{about.title}</Title>
-      <div>
+      <div className={styles.about__list}>
         {about.steps.map((step, index) => (
-          <div className={styles.about__step} key={`about-step-${index}`}>
+          <div
+            className={classNames(
+              styles.about__step,
+              index % 2 === 0 ? styles.about__step_left : styles.about__step_right,
+            )}
+            key={`about-step-${index}`}
+          >
             {index % 2 === 0 && (
               <div className={styles.about__imgWrap}>
-                {step.img.map((image, index) => (
-                  <img
-                    className={classNames(styles.about__img, image.position && styles[`about__img_${image.position}`])}
-                    key={`step-img-${index}`}
-                    src={image.src}
+                {step.images.map((image, index) => (
+                  <Picture
+                    key={`image-${index}`}
+                    // attr={{className: styles.downloadApp__img}}
+                    imgAttr={{
+                      ...image.img,
+                      className: classNames(styles.about__img, image.position && styles.about__img_abs),
+                    }}
+                    sourceData={image.sourceData}
                   />
                 ))}
               </div>
@@ -36,8 +47,13 @@ export default function About({className, children}) {
             </div>
             {index % 2 === 1 && (
               <div className={styles.about__imgWrap}>
-                {step.img.map((img, index) => (
-                  <img className={styles.about__img} {...img} />
+                {step.images.map((image, index) => (
+                  <Picture
+                    key={`step-img-${index}`}
+                    attr={{className: styles.about__img}}
+                    imgAttr={image.img}
+                    sourceData={image.sourceData}
+                  />
                 ))}
               </div>
             )}

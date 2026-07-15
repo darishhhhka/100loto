@@ -20,15 +20,13 @@
   background-color: $WHITE;
   border-radius: 6px;
   @include option(font-size, 13, 17);
-  @include option(width, 270);
-  @include option(height, 237, 350);
+  @include option(width, 270, 319);
   @include option(padding, 19px 17px, 31px 19px);
 
   &__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @include option(gap, 10);
   }
 
   &__title {

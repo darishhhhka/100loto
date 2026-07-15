@@ -18,9 +18,27 @@
   background: radial-gradient(circle at 50% 70%, #ffffff, #ffe4b0);
   font-weight: $FW-BOLD;
 
+  &__list {
+    @include option(padding, 0px 44px, 0px 0px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
   &__step {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     @include option(gap, 20, 38);
+
+    &_left {
+      align-self: start;
+    }
+
+    &_right {
+      align-self: end;
+    }
   }
 
   &__number {
@@ -32,6 +50,10 @@
     display: flex;
     align-items: center;
     @include option(gap, 12);
+
+    @include MOBILE {
+      order: 2;
+    }
   }
 
   &__text {
@@ -44,17 +66,23 @@
 
   &__imgWrap {
     position: relative;
-    @include option(width, 203px, 287px);
-    @include option(height, 203px, 287px);
+    @include option(width, 240px, 287px);
+    @include option(height, 240px, 287px);
     background-color: $WHITE;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @include MOBILE {
+      order: 1;
+    }
   }
 
   &__img {
+    //display: block;
     //width: 100%;
+    //@include option(width, 242px, 311px);
     &_abs {
       position: absolute;
       top: 35%;

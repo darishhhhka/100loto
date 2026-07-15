@@ -2,12 +2,15 @@ import React from "react";
 import classNames from "classnames";
 import styles from "./Footer.module.scss";
 import {footer} from "@/constants/copyright";
+import Picture from "@/components/baseComponents/gui/picture/Picture";
 
 export default function Footer() {
   return (
     <footer className={classNames(styles.footer)}>
       <div className={styles.footer__leftColumn}>
-        <img className={styles.footer__logo} {...footer.logo} />
+        <div className={styles.footer__logo}>
+          <Picture imgAttr={footer.logo} />
+        </div>
         <div className={styles.footer__copyright}>
           {footer.copyright.map((t, index) => (
             <p className={styles.footer__textGrey} key={`footer-copyright-${index}`}>
@@ -18,8 +21,8 @@ export default function Footer() {
         <div className={styles.footer__line}></div>
         <div className={styles.footer__mediaList}>
           {footer.socialMedia.map((media, index) => (
-            <div className={styles.footer__socialMedia}>
-              <img {...media} />
+            <div key={`footer-socia-media-${index}`} className={styles.footer__socialMedia}>
+              <Picture imgAttr={media} />
             </div>
           ))}
         </div>
@@ -28,14 +31,14 @@ export default function Footer() {
         <div className={styles.footer__partnersBlock}>
           <div className={styles.footer__parntersImg}>
             {footer.partners.logo.map((img, index) => (
-              <img key={`partners-logo-${index}`} {...img} />
+              <Picture key={`partners-logo-${index}`} imgAttr={img} />
             ))}
           </div>
           <p className={styles.footer__textWhite}>{footer.partners.organizators}</p>
         </div>
         <div className={styles.footer__partnersBlock}>
           <div>
-            <img {...footer.partners.logoAssociations} />
+            <Picture imgAttr={footer.partners.logoAssociations} />
           </div>
           <div className={styles.footer__copyright}>
             <p className={styles.footer__textWhite}>{footer.partners.right}</p>
@@ -49,20 +52,4 @@ export default function Footer() {
       </div>
     </footer>
   );
-
-  function lines(total) {
-    const arr = [];
-    for (let i = 0; i < total; i++) {
-      arr.push(
-        <div
-          className={classNames(styles.footer__lineItem, [styles[`footer__lineItem_${i + 1}`]])}
-          key={`footer-line-item-${i}`}
-        >
-          <div className={classNames(styles.footer__lineItemText)}>{line}</div>
-          <div className={classNames(styles.footer__lineItemPoint)} />
-        </div>,
-      );
-    }
-    return arr;
-  }
 }
