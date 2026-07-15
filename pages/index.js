@@ -10,6 +10,7 @@ import Security from "@/components/security/Security";
 import DownloadApp from "@/components/downloadApp/DownloadApp";
 import About from "@/components/about/About";
 import MoreWinners from "@/components/moreWinners/MoreWinners";
+import Winners from "@/components/winners/Winners";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <PageDescription {...defaultPage} />
       {/*<CustomHeader {...header} />*/}
       <Intro />
+      <Winners />
       <Results />
       <About />
       <Security />

@@ -107,6 +107,69 @@ export const intro = {
   },
 };
 
+export const winners = {
+  title: "Победители",
+  link: {
+    text: "Ещё больше историй смотрите в соцсетях",
+    href: "#winners",
+  },
+
+  imgMen: {
+    img: {
+      src: "/static/images/intro/men.png",
+      alt: "men",
+    },
+    sourceData: {
+      sources: [
+        {
+          srcSet: "/static/images/intro/menMobile.png",
+          type: "image/png",
+          media: "(max-width: 1024px)",
+        },
+      ],
+    },
+  },
+
+  winners: [
+    {
+      name: "Ольга Сусакина",
+      prize: "Загородный дом",
+    },
+    {
+      name: "Андрей Павлик",
+      prize: "Автомобиль",
+    },
+    {
+      name: "Анастасия Малюта",
+      prize: "600 000 ₽",
+    },
+    {
+      name: "Анна Макарова",
+      prize: "1 000 000 ₽ ",
+    },
+    {
+      name: "Рахима Игнатова",
+      prize: "1 000 000 ₽ ",
+    },
+    {
+      name: "Татьяна Зеликова",
+      prize: "812 500 ₽",
+    },
+    {
+      name: "Елена Войтевич",
+      prize: "1 000 000 ₽ ",
+    },
+    {
+      name: "Роман  Варганов",
+      prize: "1 000 000 ₽ ",
+    },
+  ],
+
+  button: {
+    text: "Хочу так же!",
+  },
+};
+
 export const results = {
   title: "Итоги 2021 года",
   list: [

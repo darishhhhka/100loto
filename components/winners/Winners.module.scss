@@ -1,0 +1,18 @@
+@use "@styles/base" as *;
+
+.winners {
+  @mixin mod($mod) {
+    @include modifier("winners", $mod) {
+      @content;
+    }
+  }
+  @mixin mods($mods...) {
+    @each $mod in $mods {
+      .winners_#{$mod} & {
+        @content;
+      }
+    }
+  }
+
+  @include sectionLayer;
+}
