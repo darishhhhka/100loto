@@ -17,6 +17,7 @@ export default function Intro({className, children}) {
           <Picture imgAttr={{...intro.imgMen.img, className: styles.intro__img}} sourceData={intro.imgMen.sourceData} />
         </div>
         <div className={styles.intro__info}>
+          {/*<div className={styles.intro__triangleInfo}></div>*/}
           <h1 className={styles.intro__title}>{intro.title}</h1>
           <div className={styles.intro__prizes}>
             {intro.content.map((priz, index) => (

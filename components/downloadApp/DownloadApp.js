@@ -7,10 +7,14 @@ import DownloadAppCard from "@/components/downloadAppCard/DownloadAppCard";
 import Title from "@/components/title/Title";
 import DownloadStoreCard from "@/components/downloadStoreCard/DownloadStoreCard";
 import Picture from "@/components/baseComponents/gui/picture/Picture";
+import {picture} from "framer-motion/m";
 
 export default function DownloadApp({className, children}) {
   return (
     <section id="apps" className={classNames(styles.downloadApp, className)}>
+      <div className={styles.downloadApp__cosmonaut}>
+        <Picture imgAttr={{...downloadApp.cosmonautImg, className: styles.downloadApp__cosmonautImg}} />
+      </div>
       <Title color="red">{downloadApp.title}</Title>
       <div className={styles.downloadApp__content}>
         <div className={styles.downloadApp__info}>

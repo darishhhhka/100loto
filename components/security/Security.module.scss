@@ -15,7 +15,7 @@
   }
   @include sectionLayer(56px, 22px);
   background: linear-gradient(to bottom right, #6a0c0c, #320101);
-  @include option(padding, 75px 140px, 47px 19px);
+  @include option(padding, 75px 140px 150px 140px, 47px 19px);
 
   &__title {
     @include option(width, 945, 377, 945);
@@ -25,7 +25,6 @@
     width: max-content;
     display: flex;
     justify-content: center;
-    align-items: center;
     @include option(gap, 20);
 
     @include NOT-DESK {
@@ -34,12 +33,31 @@
   }
 
   &__list {
-    display: grid;
-    grid-template-columns: auto auto;
-    @include option(gap, 12px);
-    @include MOBILE {
-      grid-template-columns: 1fr;
+    //width: max-content;
+    @include option(width, 555, 414, 555);
+
+    &_desktop {
+      display: grid;
+      grid-template-columns: auto auto;
+      @include option(gap, 12px);
+
+      @include MOBILE {
+        display: none;
+      }
     }
+
+    &_mobile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include NOT-MOB-2 {
+        display: none;
+      }
+    }
+  }
+
+  &__carousel {
+    width: 100vw;
   }
 
   &__right {

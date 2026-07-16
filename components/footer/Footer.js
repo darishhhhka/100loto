@@ -3,10 +3,14 @@ import classNames from "classnames";
 import styles from "./Footer.module.scss";
 import {footer} from "@/constants/copyright";
 import Picture from "@/components/baseComponents/gui/picture/Picture";
+import {picture} from "framer-motion/m";
 
 export default function Footer() {
   return (
     <footer className={classNames(styles.footer)}>
+      <div className={styles.footer__hatCosmonaut}>
+        <Picture imgAttr={{...footer.img, className: styles.footer__hatCosmonautImg}} />
+      </div>
       <div className={styles.footer__leftColumn}>
         <div className={styles.footer__logo}>
           <Picture imgAttr={footer.logo} />

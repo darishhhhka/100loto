@@ -13,6 +13,66 @@
       }
     }
   }
-
+  position: relative;
+  padding-bottom: 0;
   @include sectionLayer;
+  @include option(padding-bottom, 0);
+  background:
+    url("/images/bg-pattern.svg") left,
+    radial-gradient(circle at 10% 100%, #ffedbe, #ffffff);
+
+  &__header {
+    align-self: start;
+  }
+
+  &__link {
+    @include option(font-size, 17, 15);
+  }
+
+  &__content {
+    display: flex;
+  }
+
+  &__imgBlock {
+    @include option(width, 354);
+    margin-top: auto;
+    @include NOT-DESK {
+      display: none;
+    }
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include option(gap, 28, 35);
+  }
+
+  &__carousel {
+    @include option(width, 556, 330);
+    position: relative;
+  }
+
+  &__arrow {
+    z-index: 4;
+    @include option(width, 60, 52);
+    position: absolute;
+    top: 40%;
+
+    &_left {
+      @include option(left, 21);
+    }
+    &_right {
+      @include option(right, 21);
+      transform: rotate(-180deg);
+    }
+  }
+
+  &__arrowImg {
+    width: 100%;
+  }
 }

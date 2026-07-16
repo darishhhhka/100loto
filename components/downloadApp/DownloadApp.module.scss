@@ -13,14 +13,31 @@
       }
     }
   }
+
+  position: relative;
   @include sectionLayer(51px, 40px);
   @include option(padding, 75px 140px 0px 140px, 47px 19px 0px 19px);
   background:
-    url("/static/images/bg-color-pattern.svg") no-repeat right/contain,
+    url("/public/images/bg-color-pattern.svg") no-repeat right/contain,
     linear-gradient(to bottom right, #fff8f1, #ffe2b6);
 
   @include MOBILE {
     background: linear-gradient(to bottom right, #fff8f1, #ffe2b6);
+  }
+
+  &__cosmonaut {
+    @include option(width, 285);
+    position: absolute;
+    @include option(right, 159);
+    transform: translateY(-90%);
+
+    @include NOT-DESK {
+      display: none;
+    }
+  }
+
+  &__cosmonautImg {
+    width: 100%;
   }
 
   &__content {

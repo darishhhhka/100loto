@@ -1,6 +1,6 @@
 export const header = {
   logo: {
-    src: "/static/images/intro/logo.svg",
+    src: "/images/intro/logo.svg",
     alt: "logo",
   },
   menuList: [
@@ -26,7 +26,7 @@ export const header = {
     },
   ],
   img: {
-    src: "/static/images/intro/header-img.svg",
+    src: "/images/intro/header-img.svg",
     alt: "header-img",
   },
 };
@@ -65,14 +65,14 @@ export const intro = {
 
   triangleIcon: {
     img: {
-      src: "/static/images/intro/triangle.svg",
+      src: "/images/intro/triangle.svg",
       alt: "triangle-icon",
     },
 
     sourceData: {
       sources: [
         {
-          srcSet: "/static/images/intro/triangleMobile.svg",
+          srcSet: "/images/intro/triangleMobile.svg",
           type: "image/png",
           media: "(max-width: 1024px)",
         },
@@ -85,20 +85,20 @@ export const intro = {
   },
   ntv: {
     logo: {
-      src: "/static/images/ntv-logo.png",
+      src: "/images/ntv-logo.png",
       alt: "ntv-logo",
     },
     text: "Смотрите трансляцию 1435-го тиража 10 апреля на НТВ",
   },
   imgMen: {
     img: {
-      src: "/static/images/intro/men.png",
+      src: "/images/intro/men.png",
       alt: "men",
     },
     sourceData: {
       sources: [
         {
-          srcSet: "/static/images/intro/menMobile.png",
+          srcSet: "/images/intro/menMobile.png",
           type: "image/png",
           media: "(max-width: 1024px)",
         },
@@ -116,54 +116,81 @@ export const winners = {
 
   imgMen: {
     img: {
-      src: "/static/images/intro/men.png",
+      src: "/images/winners/man.png",
       alt: "men",
-    },
-    sourceData: {
-      sources: [
-        {
-          srcSet: "/static/images/intro/menMobile.png",
-          type: "image/png",
-          media: "(max-width: 1024px)",
-        },
-      ],
     },
   },
 
   winners: [
     {
+      img: {
+        src: "/images/winners/winner1.png",
+        alt: "winner1",
+      },
       name: "Ольга Сусакина",
       prize: "Загородный дом",
     },
     {
+      img: {
+        src: "/images/winners/winner2.png",
+        alt: "winner2",
+      },
       name: "Андрей Павлик",
       prize: "Автомобиль",
     },
     {
-      name: "Анастасия Малюта",
-      prize: "600 000 ₽",
+      img: {
+        src: "/images/winners/winner3.png",
+        alt: "winner3",
+      },
+      name: "Анастасия Малюта",
+      prize: "600 000 ₽",
     },
     {
-      name: "Анна Макарова",
-      prize: "1 000 000 ₽ ",
+      img: {
+        src: "/images/winners/winner4.png",
+        alt: "winner4",
+      },
+      name: "Анна Макарова",
+      prize: "1 000 000 ₽ ",
     },
     {
-      name: "Рахима Игнатова",
-      prize: "1 000 000 ₽ ",
+      img: {
+        src: "/images/winners/winner5.png",
+        alt: "winner5",
+      },
+      name: "Рахима Игнатова",
+      prize: "1 000 000 ₽ ",
     },
     {
-      name: "Татьяна Зеликова",
-      prize: "812 500 ₽",
+      img: {
+        src: "/images/winners/winner6.png",
+        alt: "winner6",
+      },
+      name: "Татьяна Зеликова",
+      prize: "812 500 ₽",
     },
     {
-      name: "Елена Войтевич",
-      prize: "1 000 000 ₽ ",
+      img: {
+        src: "/images/winners/winner7.png",
+        alt: "winner7",
+      },
+      name: "Елена Войтевич",
+      prize: "1 000 000 ₽ ",
     },
     {
-      name: "Роман  Варганов",
-      prize: "1 000 000 ₽ ",
+      img: {
+        src: "/images/winners/winner8.png",
+        alt: "winner8",
+      },
+      name: "Роман Варганов",
+      prize: "1 000 000 ₽ ",
     },
   ],
+
+  arrowIcon: {
+    src: "/images/winners/arrow.svg",
+  },
 
   button: {
     text: "Хочу так же!",
@@ -176,13 +203,13 @@ export const results = {
     {
       image: {
         img: {
-          src: "/static/images/results/calendar.png",
+          src: "/images/results/calendar.png",
           alt: "calendar",
         },
         sourceData: {
           sources: [
             {
-              srcSet: "/static/images/results/calendarMobile.png",
+              srcSet: "/images/results/calendarMobile.png",
               type: "image/png",
               media: "(max-width: 768px)",
             },
@@ -196,13 +223,13 @@ export const results = {
     {
       image: {
         img: {
-          src: "/static/images/results/cup.png",
+          src: "/images/results/cup.png",
           alt: "cup",
         },
         sourceData: {
           sources: [
             {
-              srcSet: "/static/images/results/cupMobile.png",
+              srcSet: "/images/results/cupMobile.png",
               type: "image/png",
               media: "(max-width: 768px)",
             },
@@ -216,13 +243,13 @@ export const results = {
     {
       image: {
         img: {
-          src: "/static/images/results/safe.png",
+          src: "/images/results/safe.png",
           alt: "safe",
         },
         sourceData: {
           sources: [
             {
-              srcSet: "/static/images/results/safeMobile.png",
+              srcSet: "/images/results/safeMobile.png",
               type: "image/png",
               media: "(max-width: 768px)",
             },
@@ -236,13 +263,13 @@ export const results = {
     {
       image: {
         img: {
-          src: "/static/images/results/marka.png",
+          src: "/images/results/marka.png",
           alt: "marka",
         },
         sourceData: {
           sources: [
             {
-              srcSet: "/static/images/results/markaMobile.png",
+              srcSet: "/images/results/markaMobile.png",
               type: "image/png",
               media: "(max-width: 768px)",
             },
@@ -255,6 +282,11 @@ export const results = {
       subtitleBold: "«Марка № 1 в России»",
     },
   ],
+
+  rocket: {
+    src: "/images/results/rocket.png",
+  },
+
   button: {
     text: "Участвовать",
   },
@@ -267,13 +299,13 @@ export const about = {
       images: [
         {
           img: {
-            src: "/static/images/about/computer.png",
+            src: "/images/about/computer.png",
             alt: "computer",
           },
           sourceData: {
             sources: [
               {
-                srcSet: "/static/images/about/computerMobile.png",
+                srcSet: "/images/about/computerMobile.png",
                 type: "image/png",
                 media: "(max-width: 768px)",
               },
@@ -287,13 +319,13 @@ export const about = {
       images: [
         {
           img: {
-            src: "/static/images/about/hand.png",
+            src: "/images/about/hand.png",
             alt: "hand",
           },
           sourceData: {
             sources: [
               {
-                srcSet: "/static/images/about/handMobile.png",
+                srcSet: "/images/about/handMobile.png",
                 type: "image/png",
                 media: "(max-width: 768px)",
               },
@@ -308,29 +340,13 @@ export const about = {
       images: [
         {
           img: {
-            src: "/static/images/about/phone.png",
+            src: "/images/about/phone.png",
             alt: "phone",
           },
           sourceData: {
             sources: [
               {
-                srcSet: "/static/images/about/phoneMobile.png",
-                type: "image/png",
-                media: "(max-width: 768px)",
-              },
-            ],
-          },
-        },
-        {
-          img: {
-            src: "/static/images/about/pult.png",
-            alt: "pult",
-          },
-          position: "abs",
-          sourceData: {
-            sources: [
-              {
-                srcSet: "/static/images/about/pultMobile.png",
+                srcSet: "/images/about/phoneMobile.png",
                 type: "image/png",
                 media: "(max-width: 768px)",
               },
@@ -349,13 +365,13 @@ export const about = {
       images: [
         {
           img: {
-            src: "/static/images/about/cup.png",
+            src: "/images/about/cup.png",
             alt: "cup",
           },
           sourceData: {
             sources: [
               {
-                srcSet: "/static/images/about/cupMobile.png",
+                srcSet: "/images/about/cupMobile.png",
                 type: "image/png",
                 media: "(max-width: 768px)",
               },
@@ -366,6 +382,11 @@ export const about = {
       text: "Насладитесь ожиданием, предвкушением и, возможно, радостью победы",
     },
   ],
+
+  img: {
+    src: "/images/about/sputnik.png",
+  },
+
   button: {
     text: "Участвовать",
   },
@@ -377,7 +398,7 @@ export const security = {
     {
       title: "безопасная регистрация",
       icon: {
-        src: "/static/images/securityCard1.svg",
+        src: "/images/security/securityCard1.svg",
         alt: "security",
       },
       description:
@@ -386,22 +407,22 @@ export const security = {
     {
       title: "безопасность данных",
       icon: {
-        src: "/static/images/securityCard2.svg",
+        src: "/images/security/securityCard2.svg",
         alt: "security",
       },
       description:
         "Мы не сохраняем номера банковских карт, платёжные  пароли и другие данные, которые вы вводите при оплате билетов. Вся информация хранится только на стороне платёжной системы, которую  вы выбираете сами.L",
       images: [
         {
-          src: "/static/images/visa.svg",
+          src: "/images/security/visa.svg",
           alt: "visa",
         },
         {
-          src: "/static/images/masterCard.svg",
+          src: "/images/security/masterCard.svg",
           alt: "masterCard",
         },
         {
-          src: "/static/images/mir.svg",
+          src: "/images/security/mir.svg",
           alt: "mir",
         },
       ],
@@ -409,7 +430,7 @@ export const security = {
     {
       title: "Государственные лотереи",
       icon: {
-        src: "/static/images/securityCard3.svg",
+        src: "/images/security/securityCard3.svg",
         alt: "security",
       },
       description:
@@ -418,7 +439,7 @@ export const security = {
     {
       title: "Ваш билет никогда не потеряется",
       icon: {
-        src: "/static/images/securityCard4.svg  ",
+        src: "/images/security/securityCard4.svg  ",
         alt: "security",
       },
       description:
@@ -426,7 +447,7 @@ export const security = {
     },
   ],
   video: {
-    src: "/static/images/video.png",
+    src: "/images/security/video.png",
   },
   button: {
     text: "Купить билет",
@@ -438,28 +459,28 @@ export const downloadApp = {
   cardList: [
     {
       icon: {
-        src: "/static/images/downloadAppCard1.png",
+        src: "/images/downloadApp/downloadAppCard1.png",
         alt: "download",
       },
       description: "Удобная и безопасная оплата",
     },
     {
       icon: {
-        src: "/static/images/downloadAppCard2.png",
+        src: "/images/downloadApp/downloadAppCard2.png",
         alt: "download",
       },
       description: "Быстрый вывод денег на карту",
     },
     {
       icon: {
-        src: "/static/images/downloadAppCard3.png",
+        src: "/images/downloadApp/downloadAppCard3.png",
         alt: "download",
       },
       description: "Лотереи всегда под рукой",
     },
     {
       icon: {
-        src: "/static/images/downloadAppCard4.png",
+        src: "/images/downloadApp/downloadAppCard4.png",
         alt: "download",
       },
       description: "Push-уведомления о выигрышах",
@@ -468,7 +489,7 @@ export const downloadApp = {
   storeList: [
     {
       icon: {
-        src: "/static/images/apple.svg",
+        src: "/images/downloadApp/apple.svg",
         alt: "download",
       },
       forPhone: "Для",
@@ -476,7 +497,7 @@ export const downloadApp = {
     },
     {
       icon: {
-        src: "/static/images/huawei.png",
+        src: "/images/downloadApp/huawei.png",
         alt: "download",
       },
       forPhone: "Для",
@@ -484,7 +505,7 @@ export const downloadApp = {
     },
     {
       icon: {
-        src: "/static/images/android.svg",
+        src: "/images/downloadApp/android.svg",
         alt: "download",
       },
       forPhone: "Для других",
@@ -492,7 +513,7 @@ export const downloadApp = {
     },
     {
       icon: {
-        src: "/static/images/samsung.png",
+        src: "/images/downloadApp/samsung.png",
         alt: "download",
       },
       forPhone: "Для",
@@ -500,7 +521,7 @@ export const downloadApp = {
     },
     {
       icon: {
-        src: "/static/images/xiomi.png",
+        src: "/images/downloadApp/xiomi.png",
         alt: "download",
       },
       forPhone: "Для",
@@ -509,20 +530,25 @@ export const downloadApp = {
   ],
   phoneImg: {
     img: {
-      src: "/static/images/downloadApp/iphone.png",
+      src: "/images/downloadApp/iphone.png",
       alt: "phone",
     },
     sourceData: {
       sources: [
         {
-          srcSet: "/static/images/downloadApp/iphoneMobile.png",
+          srcSet: "/images/downloadApp/iphoneMobile.png",
           type: "image/png",
           media: "(max-width: 1024px)",
         },
       ],
     },
   },
+
+  cosmonautImg: {
+    src: "/images/downloadApp/cosmonaut.png",
+  },
 };
+
 export const moreWinners = {
   title: "Победителей будет больше!",
   button: {
@@ -530,7 +556,7 @@ export const moreWinners = {
   },
   ntv: {
     logo: {
-      src: "/static/images/ntv-logo.png",
+      src: "/images/ntv-logo.png",
       alt: "ntv-logo",
     },
     text: "Смотрите трансляцию 1435-го тиража 10 апреля на НТВ",
@@ -539,7 +565,7 @@ export const moreWinners = {
 
 export const footer = {
   logo: {
-    src: "/static/images/footerLogo.svg",
+    src: "/images/footerLogo.svg",
     alt: "logo",
   },
   copyright: [
@@ -551,36 +577,36 @@ export const footer = {
   ],
   socialMedia: [
     {
-      src: "/static/images/vk.svg",
+      src: "/images/footer/vk.svg",
       alt: "vk",
     },
     {
-      src: "/static/images/ok.svg",
+      src: "/images/footer/ok.svg",
       alt: "ok",
     },
     {
-      src: "/static/images/tikTok.svg",
+      src: "/images/footer/tikTok.svg",
       alt: "tikTok",
     },
     {
-      src: "/static/images/rutube.svg",
+      src: "/images/footer/rutube.svg",
       alt: "rutube",
     },
   ],
   partners: {
     logo: [
       {
-        src: "/static/images/minSport.png",
+        src: "/images/footer/minSport.png",
         alt: "minSport",
       },
       {
-        src: "/static/images/minFinance.png",
+        src: "/images/footer/minFinance.png",
         alt: "minFinance",
       },
     ],
     organizators: "Организаторами лотерей являются Министерство спорта РФ и Министерство финансов РФ.",
     logoAssociations: {
-      src: "/static/images/logoAssociations.png",
+      src: "/images/footer/logoAssociations.png",
       alt: "logoAssociations",
     },
     right:
@@ -590,11 +616,15 @@ export const footer = {
       "ELA — объединение лотерейных компаний из Европы и соседних регионов.",
     ],
   },
+
+  img: {
+    src: "/images/footer/hatCosmonaut.png",
+  },
 };
 
 export const ntv = {
   logo: {
-    src: "/static/images/ntv-logo.png",
+    src: "/images/ntv-logo.png",
     alt: "ntv-logo",
   },
   text: "Смотрите трансляцию 1435-го тиража 10 апреля на НТВ",

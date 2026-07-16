@@ -13,7 +13,7 @@
       }
     }
   }
-
+  text-transform: none;
   @include option(font-size, 13);
   font-weight: $FW-SEMI_BOLD;
   display: flex;

@@ -1,9 +1,26 @@
 @use "@styles/base" as *;
 
 .footer {
+  position: relative;
   @include sectionLayer(86, 44);
   flex-direction: row;
   background-color: #0f1114;
+  font-family: "Roboto", sans-serif;
+
+  &__hatCosmonaut {
+    z-index: 2;
+    @include option(width, 314);
+    position: absolute;
+    @include option(right, 82px);
+    @include option(top, -225px);
+    @include NOT-DESK {
+      display: none;
+    }
+  }
+
+  &__hatCosmonautImg {
+    width: 100%;
+  }
 
   @include MOBILE {
     flex-direction: column;
@@ -36,16 +53,6 @@
     @include option(gap, 20);
   }
 
-  &__socialMedia {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    @include option(width, 27);
-    @include option(height, 27);
-    border-radius: 50%;
-    border: 1px solid #eac141;
-  }
-
   &__rightColumn {
     display: flex;
     flex-direction: column;
@@ -53,7 +60,6 @@
   }
 
   &__parntersImg {
-    //@include options(width, 79, );
     display: flex;
     flex-direction: row;
     @include option(gap, 31, 11);

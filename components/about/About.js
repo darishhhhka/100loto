@@ -9,12 +9,16 @@ import Picture from "@/components/baseComponents/gui/picture/Picture";
 export default function About({className, children}) {
   return (
     <section className={classNames(styles.about, className)}>
+      <div className={styles.about__sputnik}>
+        <Picture imgAttr={{...about.img, className: styles.about__sputnikImg}} />
+      </div>
       <Title color="red">{about.title}</Title>
       <div className={styles.about__list}>
         {about.steps.map((step, index) => (
           <div
             className={classNames(
               styles.about__step,
+              styles[`about__step_${index}`],
               index % 2 === 0 ? styles.about__step_left : styles.about__step_right,
             )}
             key={`about-step-${index}`}

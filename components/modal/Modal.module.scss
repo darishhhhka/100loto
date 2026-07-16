@@ -1,0 +1,16 @@
+@use "@styles/base" as *;
+
+.modal {
+  @mixin mod($mod) {
+    @include modifier("modal", $mod) {
+      @content;
+    }
+  }
+  @mixin mods($mods...) {
+    @each $mod in $mods {
+      .modal_#{$mod} & {
+        @content;
+      }
+    }
+  }
+}

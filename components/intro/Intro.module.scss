@@ -37,13 +37,18 @@
     flex-direction: column;
     @include option(padding, 164px 90px 20px 90px, 50px 18px 28px 35px, 164px 90px 20px 90px);
     background:
-      url("/static/images/bg-pattern.svg") no-repeat left/contain,
+      url("/images/bg-pattern.svg") no-repeat left,
       linear-gradient(125deg, #ff3030, 75%, #ffb18f);
 
     @include NOT-MOB-2 {
       align-items: start;
       order: -1;
     }
+  }
+
+  &__triangleInfo {
+    border: 100vw solid transparent;
+    border-bottom: 30px solid orange;
   }
 
   &__title {
@@ -67,10 +72,6 @@
     @include option(font-size, 43, 25);
     font-weight: $FW-EXTRA_BOLD;
     position: relative;
-
-    //&::before{
-    //  content: url("/static/images/intro/triangle.svg");
-    //}
   }
 
   &__triangle {
@@ -113,6 +114,8 @@
       }
 
       @include NOT-MOB {
+        @include option(font-size, 51);
+        width: max-content;
         z-index: 100;
         position: absolute;
         background-color: $RED;
@@ -128,13 +131,17 @@
 
   &__imgBlock {
     @include option(width, 640px, 414px);
-    background: url("/static/images/intro/intro-bg.png") no-repeat center/cover;
+    background: url("/images/intro/intro-bg.png") no-repeat center/cover;
   }
 
   &__img {
     @include option(width, 482px, 284px);
     transform: translateX(-15%);
     @include option(padding-top, 165);
+
+    @include NOT-MOB-2 {
+      transform: translateX(-45%);
+    }
   }
 
   //&_bg_red {
@@ -154,7 +161,6 @@
   //  position: absolute;
   //  //background:
   //  //  linear-gradient(#efd7bd00, #868ab0),
-  //  //  url("/static/images/cosmos.png") no-repeat center/cover;
   //  background: url("/static/images/intro/intro-bg.png") no-repeat center/cover,;
   //  right: 0;
   //  bottom: 0;

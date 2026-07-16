@@ -17,18 +17,27 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  @include option(gap, 20, 22);
+  @include option(gap, 20, 0);
   text-align: center;
-  flex: 1;
   @include MOBILE {
     flex-direction: row;
   }
 
   &__title {
-    @include option(width, 332, 232);
+    width: max-content;
     color: #ffcd17;
     @include option(font-size, 48);
     font-weight: $FW-EXTRA_BOLD;
+
+    @include MOBILE {
+      width: min-content;
+    }
+
+    &_left {
+      @include MOBILE {
+        transform: translateX(-5%);
+      }
+    }
   }
 
   &__subtitle {
@@ -48,18 +57,11 @@
   }
 
   &__imgWrap {
-    @include option(height, 203, 149);
-    @include option(width, 203, 149);
-    border-radius: 50%;
-    background-color: $WHITE;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include option(height, 231, 156);
+    @include option(width, 231, 162);
   }
 
   &__img {
-    //width: 100%;
-    height: 100%;
-    //@include option(width, 190px, 140px);
+    width: 100%;
   }
 }

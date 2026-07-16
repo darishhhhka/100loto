@@ -15,10 +15,14 @@
   }
 
   z-index: 2;
-  @include sectionLayer;
+  @include sectionLayer(0px, 0px);
   justify-content: space-between;
-  background-color: #002655;
+  background: url("/images/moreWinners/cosmos.png") no-repeat center/cover;
   @include option(height, 780);
+
+  @include NOT-DESK {
+    background: url("/images/moreWinners/cosmosMobile.png") no-repeat center/cover;
+  }
 
   &__title {
     @include option(font-size, 65, 34);

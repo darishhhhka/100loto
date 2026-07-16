@@ -15,8 +15,33 @@
   }
 
   @include sectionLayer(107px, 49px);
-  background: radial-gradient(circle at 50% 70%, #ffffff, #ffe4b0);
+  background:
+    url("/images/about/doshed.svg") no-repeat center,
+    radial-gradient(circle at 50% 70%, #ffffff, #ffe4b0);
+  background-size:
+    70% 90%,
+    cover;
   font-weight: $FW-BOLD;
+  position: relative;
+
+  @include MOBILE {
+    background: radial-gradient(circle at 50% 70%, #ffffff, #ffe4b0);
+  }
+
+  &__sputnik {
+    position: absolute;
+    @include option(left, 170);
+    transform: translateY(-90%);
+    @include option(width, 234);
+
+    @include NOT-DESK {
+      display: none;
+    }
+  }
+
+  &__sputnikImg {
+    width: 100%;
+  }
 
   &__list {
     @include option(padding, 0px 44px, 0px 0px);
@@ -31,6 +56,13 @@
     justify-content: center;
     flex-wrap: wrap;
     @include option(gap, 20, 38);
+    @include NOT-MOB {
+      @for $i from 0 through 3 {
+        &_#{$i} {
+          transform: translateY(-16% * $i);
+        }
+      }
+    }
 
     &_left {
       align-self: start;
@@ -65,15 +97,6 @@
   }
 
   &__imgWrap {
-    position: relative;
-    @include option(width, 240px, 287px);
-    @include option(height, 240px, 287px);
-    background-color: $WHITE;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     @include MOBILE {
       order: 1;
     }

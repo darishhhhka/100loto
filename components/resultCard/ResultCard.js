@@ -4,7 +4,7 @@ import classNames from "classnames";
 import styles from "./ResultCard.module.scss";
 import Picture from "@/components/baseComponents/gui/picture/Picture";
 
-export default function ResultCard({className, title, img, subtitle, subtitleBold}) {
+export default function ResultCard({className, title, img, subtitle, subtitleBold, left}) {
   return (
     <div className={classNames(styles.resultCard, className)}>
       <Picture
@@ -14,7 +14,7 @@ export default function ResultCard({className, title, img, subtitle, subtitleBol
       />
 
       <div>
-        <h5 className={styles.resultCard__title}>{title}</h5>
+        <h5 className={classNames(styles.resultCard__title, left && styles.resultCard__title_left)}>{title}</h5>
         <p classNmae={styles.resultCard__subtitle}>
           {subtitle}
           {subtitleBold && <span className={styles.resultCard__subtitle_bold}>{subtitleBold}</span>}
@@ -26,5 +26,9 @@ export default function ResultCard({className, title, img, subtitle, subtitleBol
 
 ResultCard.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.node,
+  title: PropTypes.string,
+  img: PropTypes.object,
+  subtitle: PropTypes.string,
+  subtitleBold: PropTypes.string,
+  left: PropTypes.bool,
 };
