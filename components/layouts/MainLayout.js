@@ -7,6 +7,7 @@ import {provider, ProviderComposer} from "@/providers/ProviderCompose";
 import {useEventActions} from "@/hooks/useEventActions";
 import NodeProvider from "@/providers/NodeProvider";
 import styles from "./MainLayout.module.scss";
+import InterviewModal from "@/components/modals/interviewModal/InterviewModal";
 
 export default function MainLayout({children}) {
   useIOSGestureHack();
@@ -20,7 +21,9 @@ export default function MainLayout({children}) {
             () => [
               provider(NodeProvider),
               provider(ModalProvider, {
-                aliases: {},
+                aliases: {
+                  interview: {Modal: InterviewModal, props: {}},
+                },
               }),
             ],
             [],

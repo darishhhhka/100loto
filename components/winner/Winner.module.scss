@@ -14,14 +14,44 @@
     }
   }
 
-  @include option(width, 279, 245);
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   @include option(gap, 14);
+  opacity: 0;
 
-  &_prev {
+  &_active {
+    opacity: 1;
+  }
+
+  &_prev,
+  &_next {
     opacity: 0.2;
+  }
+
+  &__imgWrap {
+    position: relative;
+    height: max-content;
+  }
+
+  &__play {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #47010170;
+    border-radius: 28px;
+    color: white;
+  }
+
+  &__playImg {
+    @include option(width, 92px, 80px);
   }
 
   &__name {

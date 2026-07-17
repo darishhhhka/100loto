@@ -13,7 +13,8 @@
 
 @mixin sectionLayer($gap: 55px, $gap-m: 42px) {
   width: 100vw;
-  @include option(padding, 75px 140px, 47px 19px);
+  //@include option(height, 780px, 911px);
+  @include option(padding, 80px 148px, 47px 19px);
   display: flex;
   flex-direction: column;
   align-items: center;

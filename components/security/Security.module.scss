@@ -22,7 +22,7 @@
   }
 
   &__content {
-    width: max-content;
+    //width: 100vw;
     display: flex;
     justify-content: center;
     @include option(gap, 20);
@@ -33,8 +33,7 @@
   }
 
   &__list {
-    //width: max-content;
-    @include option(width, 555, 414, 555);
+    width: max-content;
 
     &_desktop {
       display: grid;
@@ -58,6 +57,9 @@
 
   &__carousel {
     width: 100vw;
+
+    &_none {
+    }
   }
 
   &__right {
@@ -73,5 +75,26 @@
 
   &__img {
     @include option(width, 443, 375);
+  }
+
+  &__carouselWrap {
+    display: flex;
+    justify-content: center;
+    @include option(width, 414px);
+    --carousel-slide-bg: none;
+    @include NOT-MOB-2 {
+      display: none;
+    }
+  }
+
+  &__swiper {
+    @include option(width, 319px);
+  }
+
+  &__swiperSlide {
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

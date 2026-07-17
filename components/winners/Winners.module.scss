@@ -15,11 +15,11 @@
   }
   position: relative;
   padding-bottom: 0;
-  @include sectionLayer;
+  @include sectionLayer(75px, 44px);
   @include option(padding-bottom, 0);
   background:
-    url("/images/bg-pattern.svg") left,
-    radial-gradient(circle at 10% 100%, #ffedbe, #ffffff);
+    url("/images/bg-pattern-white.svg") left,
+    radial-gradient(circle at 10% 100%, #ffedbe -20%, #ffffff 50%);
 
   &__header {
     align-self: start;
@@ -31,9 +31,16 @@
 
   &__content {
     display: flex;
+    @include option(gap, 85px);
+    @include DESKTOP {
+      @include option(padding-left, 300px);
+    }
   }
 
   &__imgBlock {
+    position: absolute;
+    @include option(left, 137px);
+    bottom: 0;
     @include option(width, 354);
     margin-top: auto;
     @include NOT-DESK {
@@ -46,28 +53,39 @@
   }
 
   &__info {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    @include option(gap, 28, 35);
+    @include option(gap, 28px, 35);
+    @include option(padding-bottom, 65);
+    @include option(width, 600px, 372px);
+    --carousel-overflow: visible;
+    --carousel-swiper-overflow: visible;
+    --carousel-slide-bg: none;
   }
 
   &__carousel {
-    @include option(width, 556, 330);
     position: relative;
+  }
+
+  &__carouselWrap {
+    position: relative;
+    @include option(width, 287px, 245px);
   }
 
   &__arrow {
     z-index: 4;
-    @include option(width, 60, 52);
+    @include option(width, 60, 52, 60);
     position: absolute;
-    top: 40%;
+    @include option(top, 107px, 90px);
+    cursor: pointer;
 
     &_left {
-      @include option(left, 21);
+      @include option(left, -82px, 0px, -82px);
     }
     &_right {
-      @include option(right, 21);
+      @include option(right, -82px, 0px, -82px);
       transform: rotate(-180deg);
     }
   }

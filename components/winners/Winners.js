@@ -8,7 +8,7 @@ import Picture from "@/components/baseComponents/gui/picture/Picture";
 import Button from "@/components/button/Button";
 import Carousel from "@/components/baseComponents/gui/carousel/Carousel";
 import Winner from "@/components/winner/Winner";
-import {EffectCoverflow, Pagination} from "swiper/modules";
+import {EffectCoverflow, Navigation, Pagination} from "swiper/modules";
 import Modal from "@/components/modal/Modal";
 
 export default function Winners({className, children}) {
@@ -16,22 +16,31 @@ export default function Winners({className, children}) {
     effect: "coverflow",
     grabCursor: true,
     centeredSlides: true,
-    slidesPerView: "auto",
-    spaceBetween: -180,
+    slidesPerView: "1",
     coverflowEffect: {
-      scale: 0.3,
       rotate: 0,
-      stretch: -30,
-      depth: 100,
+      stretch: 150,
+      depth: 300,
       modifier: 1,
       slideShadows: false,
     },
-    pagination: true,
-    modules: [EffectCoverflow, Pagination],
+    breakpoints: {
+      768: {
+        coverflowEffect: {
+          rotate: 0,
+          stretch: 90,
+          depth: 200,
+          modifier: 1,
+          slideShadows: false,
+        },
+      },
+    },
     navigation: {
       nextEl: "#swiper-right",
       prevEl: "#swiper-left",
     },
+    modules: [EffectCoverflow, Navigation],
+    className: styles.winners__swiper,
   };
 
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -44,7 +53,6 @@ export default function Winners({className, children}) {
           {winners.link.text}
         </a>
       </div>
-
       <div className={styles.winners__content}>
         <div className={styles.winners__imgBlock}>
           <Picture
@@ -53,22 +61,18 @@ export default function Winners({className, children}) {
           />
         </div>
         <div className={styles.winners__info}>
-          <div className={styles.winners__carousel}>
-            <div id="swiper-left" className={classNames(styles.winners__arrow, styles.winners__arrow_left)}>
-              <Picture imgAttr={{...winners.arrowIcon, className: styles.winners__arrowImg}} />
-            </div>
-            <Carousel itemsData={winners.winners} item={Winner} settings={settingsSwiper} />
-            <div id="swiper-right" className={classNames(styles.winners__arrow, styles.winners__arrow_right)}>
-              <Picture imgAttr={{...winners.arrowIcon, className: styles.winners__arrowImg}} />
-            </div>
+          <div id="swiper-left" className={classNames(styles.winners__arrow, styles.winners__arrow_left)}>
+            <Picture imgAttr={{...winners.arrowIcon, className: styles.winners__arrowImg}} />
           </div>
-
-          {/*</div>*/}
+          <div className={styles.winners__carouselWrap}>
+            <Carousel settings={settingsSwiper} item={Winner} itemsData={winners.winners} />
+          </div>
+          <div id="swiper-right" className={classNames(styles.winners__arrow, styles.winners__arrow_right)}>
+            <Picture imgAttr={{...winners.arrowIcon, className: styles.winners__arrowImg}} />
+          </div>
           <Button>{winners.button.text}</Button>
         </div>
       </div>
-
-      <Modal />
     </section>
   );
 }

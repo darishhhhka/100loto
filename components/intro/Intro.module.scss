@@ -14,6 +14,10 @@
     }
   }
 
+  &_paddingLeft {
+    @include option(padding-left, 13px);
+  }
+
   position: relative;
   color: $WHITE;
   width: 100vw;
@@ -26,16 +30,17 @@
   &__content {
     display: flex;
     flex-direction: column;
+    //@include option(height, 790px, 911px);
     @include NOT-MOB-2 {
       flex-direction: row;
     }
   }
 
   &__info {
-    @include option(width, 800px, 414px, 800px);
+    @include option(width, 801px, 414px, 801px);
     display: flex;
     flex-direction: column;
-    @include option(padding, 164px 90px 20px 90px, 50px 18px 28px 35px, 164px 90px 20px 90px);
+    @include option(padding, 152px 90px 20px 139px, 50px 18px 28px 35px, 164px 90px 20px 90px);
     background:
       url("/images/bg-pattern.svg") no-repeat left,
       linear-gradient(125deg, #ff3030, 75%, #ffb18f);
@@ -53,6 +58,7 @@
 
   &__title {
     margin: 0;
+    @include option(padding-left, 14px);
     @include option(margin-bottom, 32px, 26px);
     @include option(font-size, 67, 51);
     font-weight: $FW-EXTRA_BOLD;
@@ -68,7 +74,7 @@
   &__priz {
     display: flex;
     flex-direction: column;
-    @include option(gap, 5px);
+    //@include option(gap, 2px);
     @include option(font-size, 43, 25);
     font-weight: $FW-EXTRA_BOLD;
     position: relative;
@@ -80,7 +86,7 @@
   }
 
   &__btn {
-    @include option(margin-bottom, 8px);
+    @include option(margin-bottom, 20px);
 
     @include MOBILE {
       width: 100%;

@@ -5,7 +5,7 @@
   display: flex;
   justify-content: space-between;
   align-items: start;
-  @include option(padding, 45px 41px 0 41px, 19px 18px 0 18px);
+  @include option(padding, 40px 41px 0 41px, 19px 18px 0 18px);
   color: $WHITE;
 
   &__logo {
@@ -13,9 +13,9 @@
   }
 
   &__navbar {
+    @include option(padding-top, 7px);
     justify-self: center;
     display: flex;
-    text-transform: uppercase;
     @include option(gap, 40);
     @include option(font-size, 12);
 

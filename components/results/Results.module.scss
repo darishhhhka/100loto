@@ -37,11 +37,12 @@
   }
 
   &__list {
+    @include option(padding, 0px 56px, 0px 0px);
     display: grid;
     justify-content: space-between;
     align-items: center;
     grid-template-columns: repeat(4, auto);
-    @include option(gap, 25, 27);
+    @include option(gap, 10px, 27px);
 
     @include TABLET {
       grid-template-columns: repeat(2, auto);
@@ -49,6 +50,16 @@
 
     @include MOBILE {
       grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__card_right {
+    @include DESKTOP {
+      @for $i from 0 to 3 {
+        &_#{$i} {
+          transform: translateX(10% * $i);
+        }
+      }
     }
   }
 

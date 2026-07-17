@@ -4,9 +4,10 @@
   border: none;
   background-color: $YELLOW;
   color: $BLACK;
+  @include option(width, 287px);
+  @include option(height, 68px);
   @include option(font-size, 19, 22);
   font-weight: $FW-SEMI_BOLD;
-  @include option(padding, 28px 92px);
   border-radius: 4px;
 
   @mixin mod($mod) {

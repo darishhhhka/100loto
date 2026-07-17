@@ -14,18 +14,33 @@
     }
   }
 
-  @include sectionLayer(107px, 49px);
-  background:
-    url("/images/about/doshed.svg") no-repeat center,
-    radial-gradient(circle at 50% 70%, #ffffff, #ffe4b0);
-  background-size:
-    70% 90%,
-    cover;
   font-weight: $FW-BOLD;
   position: relative;
+  height: max-content;
+
+  &__bg {
+    height: 100%;
+    width: 100vw;
+    background: radial-gradient(circle at 50% 70%, #ffffff, #ffe4b0);
+  }
+
+  &__wrap {
+    @include sectionLayer(107px, 49px);
+  }
 
   @include MOBILE {
     background: radial-gradient(circle at 50% 70%, #ffffff, #ffe4b0);
+  }
+
+  &__doshed {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    width: 70%;
+    @include MOBILE {
+      display: none;
+    }
   }
 
   &__sputnik {
@@ -56,10 +71,10 @@
     justify-content: center;
     flex-wrap: wrap;
     @include option(gap, 20, 38);
-    @include NOT-MOB {
+    @include NOT-MOB-2 {
       @for $i from 0 through 3 {
         &_#{$i} {
-          transform: translateY(-16% * $i);
+          transform: translateY(-20% * $i);
         }
       }
     }
@@ -91,6 +106,7 @@
   &__text {
     @include option(font-size, 18px);
     @include option(max-width, 300);
+
     &_red {
       color: $RED;
     }

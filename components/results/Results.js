@@ -5,9 +5,9 @@ import styles from "./Results.module.scss";
 import Title from "@/components/title/Title";
 import {results} from "@/constants/copyright";
 import ResultCard from "@/components/resultCard/ResultCard";
-import Button from "@/components/button/Button";
 import CustomButton from "@/components/customButton/CustomButton";
 import Picture from "@/components/baseComponents/gui/picture/Picture";
+import Button from "@/components/button/Button";
 
 export default function Results({className, children}) {
   return (
@@ -19,7 +19,7 @@ export default function Results({className, children}) {
       <div className={styles.results__list}>
         {results.list.map((res, index) => (
           <ResultCard
-            className={index === 3 && styles.results__card_left}
+            className={styles[`results__card_right_${index}`]}
             key={`result-card-${index}`}
             img={res.image}
             title={res.title}

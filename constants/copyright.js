@@ -129,6 +129,7 @@ export const winners = {
       },
       name: "Ольга Сусакина",
       prize: "Загородный дом",
+      srcVideo: "https://rutube.ru/play/embed/3cb1e1d9830d450cd88f06530d1e6b94/",
     },
     {
       img: {
@@ -137,6 +138,7 @@ export const winners = {
       },
       name: "Андрей Павлик",
       prize: "Автомобиль",
+      srcVideo: "https://rutube.ru/play/embed/fbe15da7b00bf9a532d05481ba736a35/",
     },
     {
       img: {
@@ -145,6 +147,7 @@ export const winners = {
       },
       name: "Анастасия Малюта",
       prize: "600 000 ₽",
+      srcVideo: "https://rutube.ru/play/embed/87bf63ad103afd4dc4acddb2799b5962/",
     },
     {
       img: {
@@ -153,6 +156,7 @@ export const winners = {
       },
       name: "Анна Макарова",
       prize: "1 000 000 ₽ ",
+      srcVideo: "https://rutube.ru/play/embed/7bd6278f426a5bc8496a9a1a822b63e6/",
     },
     {
       img: {
@@ -161,6 +165,7 @@ export const winners = {
       },
       name: "Рахима Игнатова",
       prize: "1 000 000 ₽ ",
+      srcVideo: "https://rutube.ru/play/embed/c9722a301353ae57cc22916cf6fd45e6/",
     },
     {
       img: {
@@ -169,6 +174,7 @@ export const winners = {
       },
       name: "Татьяна Зеликова",
       prize: "812 500 ₽",
+      srcVideo: "https://rutube.ru/play/embed/72479cee6ea5c3ca0094f50450d0fdca/",
     },
     {
       img: {
@@ -177,6 +183,7 @@ export const winners = {
       },
       name: "Елена Войтевич",
       prize: "1 000 000 ₽ ",
+      srcVideo: "https://rutube.ru/play/embed/c9d69c7250ebc82a6cff1c59b3378482/",
     },
     {
       img: {
@@ -185,8 +192,13 @@ export const winners = {
       },
       name: "Роман Варганов",
       prize: "1 000 000 ₽ ",
+      srcVideo: "https://rutube.ru/play/embed/2e749e2a7c2352adb1664da82af301fa",
     },
   ],
+
+  playIcon: {
+    src: "/images/winners/winners.svg",
+  },
 
   arrowIcon: {
     src: "/images/winners/arrow.svg",

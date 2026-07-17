@@ -6,6 +6,7 @@ import {moreWinners} from "@/constants/copyright";
 import Title from "@/components/title/Title";
 import Button from "@/components/button/Button";
 import Ntv from "@/components/ntv/Ntv";
+import CustomButton from "@/components/customButton/CustomButton";
 
 export default function MoreWinners({className, children}) {
   return (
@@ -14,7 +15,7 @@ export default function MoreWinners({className, children}) {
         {moreWinners.title}
       </Title>
       <div className={styles.moreWinners__content}>
-        <Button className={styles.moreWinners__btn}>{moreWinners.button.text}</Button>
+        <CustomButton className={styles.moreWinners__btn}>{moreWinners.button.text}</CustomButton>
         <Ntv className={styles.moreWinners__ntv} />
       </div>
     </div>

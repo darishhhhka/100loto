@@ -7,6 +7,7 @@ import {intro} from "@/constants/copyright";
 import Button from "@/components/button/Button";
 import Ntv from "@/components/ntv/Ntv";
 import Picture from "@/components/baseComponents/gui/picture/Picture";
+import CustomButton from "@/components/customButton/CustomButton";
 
 export default function Intro({className, children}) {
   return (
@@ -17,7 +18,6 @@ export default function Intro({className, children}) {
           <Picture imgAttr={{...intro.imgMen.img, className: styles.intro__img}} sourceData={intro.imgMen.sourceData} />
         </div>
         <div className={styles.intro__info}>
-          {/*<div className={styles.intro__triangleInfo}></div>*/}
           <h1 className={styles.intro__title}>{intro.title}</h1>
           <div className={styles.intro__prizes}>
             {intro.content.map((priz, index) => (
@@ -28,14 +28,15 @@ export default function Intro({className, children}) {
                   sourceData={intro.triangleIcon.sourceData}
                 />
                 {priz.priz.map((text, index) => (
-                  <p className={classNames(text.style && styles[text.style])}>{text.text}</p>
+                  <p className={classNames(text.style && styles[text.style], styles.intro_paddingLeft)}>{text.text}</p>
                 ))}
               </div>
             ))}
           </div>
-
-          <Button className={styles.intro__btn}>{intro.button.text}</Button>
-          <Ntv />
+          <div className={styles.intro_paddingLeft}>
+            <Button className={styles.intro__btn}>{intro.button.text}</Button>
+            <Ntv />
+          </div>
         </div>
       </div>
 

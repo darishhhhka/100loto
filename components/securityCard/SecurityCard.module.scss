@@ -14,29 +14,25 @@
     }
   }
 
+  justify-self: center;
   display: flex;
   flex-direction: column;
   @include option(gap, 10, 26);
   border-radius: 6px;
   @include option(font-size, 13, 17);
   @include option(width, 270, 319);
+  @include option(height, 238, 350);
   @include option(padding, 19px 17px, 31px 19px);
   position: relative;
   background: $WHITE;
-  @include NOT-MOB-2 {
-  }
 
   &_active {
     background-color: $WHITE;
-    z-index: 100;
-    position: absolute;
   }
 
   &_prev,
   &_next {
-    z-index: 1;
-    //background: linear-gradient(to right, #010832, transparent), $WHITE;
-    transform: scale(0.9);
+    background: linear-gradient(to right, #010832, transparent), $WHITE;
   }
 
   &__header {

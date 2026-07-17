@@ -1,0 +1,24 @@
+@use "@styles/base" as *;
+
+.interviewModal {
+  @mixin mod($mod) {
+    @include modifier("interviewModal", $mod) {
+      @content;
+    }
+  }
+  @mixin mods($mods...) {
+    @each $mod in $mods {
+      .interviewModal_#{$mod} & {
+        @content;
+      }
+    }
+  }
+
+  @include option(width, 749px);
+  @include option(height, 399px);
+
+  &__iframe {
+    width: 100%;
+    height: 100%;
+  }
+}
