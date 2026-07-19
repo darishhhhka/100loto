@@ -14,8 +14,8 @@
     }
   }
 
-  @include option(width, 749px);
-  @include option(height, 399px);
+  @include option(width, 749px, 390px);
+  @include option(height, 399px, 200px);
 
   &__iframe {
     width: 100%;

@@ -43,17 +43,30 @@ export default function About({className, children}) {
             xmlns="http://www.w3.org/2000/svg"
             preserveAspectRatio="none"
           >
-            <motion.path
+            <defs>
+              <radialGradient id="bgGradient" cx="50%" cy="70%" r="70%">
+                <stop offset="0%" stopColor="#fff" />
+                <stop offset="40%" stopColor="#fff" />
+                <stop offset="100%" stopColor="#ffe4b0" />
+              </radialGradient>
+            </defs>
+            <path
               d="M49.7993 167.122C88.7992 -37.8782 851.799 -103.878 830.799 272.122C831.799 345.122 718.799 484.122 588.799 417.122C293.994 265.184 67.133 330.789 26.7994 444.122C-120.201 815.122 406.799 943.122 734.799 720.122"
               stroke="#FF927A"
               stroke-width="3"
               stroke-linecap="round"
               stroke-dasharray="9 10"
-              initial={{strokeDashoffset: 0, strokeDasharray: 10, pathLength: 0}}
+            />
+
+            <motion.path
+              d="M49.7993 167.122C88.7992 -37.8782 851.799 -103.878 830.799 272.122C831.799 345.122 718.799 484.122 588.799 417.122C293.994 265.184 67.133 330.789 26.7994 444.122C-120.201 815.122 406.799 943.122 734.799 720.122"
+              stroke="url(#bgGradient)"
+              stroke-width="4"
+              stroke-linecap="round"
+              stroke-dasharray="9 10"
+              initial={{pathLength: 1}}
               whileInView={{
-                strokeDashoffset: 100,
-                strokeDasharray: 20,
-                pathLength: 1,
+                pathLength: 0,
                 transition: {duration: 3, delay: 0.2},
               }}
             />

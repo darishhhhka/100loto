@@ -22,14 +22,13 @@
     height: 100%;
     width: 100vw;
     background: radial-gradient(circle at 50% 70%, #ffffff, #ffe4b0);
+    @include MOBILE {
+      background: radial-gradient(circle at 50% 70%, #ffffff, #ffe4b0);
+    }
   }
 
   &__wrap {
     @include sectionLayer(107px, 49px);
-  }
-
-  @include MOBILE {
-    background: radial-gradient(circle at 50% 70%, #ffffff, #ffe4b0);
   }
 
   &__doshed {
