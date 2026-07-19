@@ -82,6 +82,7 @@ export const intro = {
 
   button: {
     text: "Участвовать",
+    href: "http://stoloto.ru/",
   },
   ntv: {
     logo: {
@@ -206,6 +207,7 @@ export const winners = {
 
   button: {
     text: "Хочу так же!",
+    href: "http://stoloto.ru/",
   },
 };
 
@@ -301,6 +303,7 @@ export const results = {
 
   button: {
     text: "Участвовать",
+    href: "http://stoloto.ru/",
   },
 };
 
@@ -463,6 +466,7 @@ export const security = {
   },
   button: {
     text: "Купить билет",
+    href: "http://stoloto.ru/",
   },
 };
 
@@ -565,6 +569,7 @@ export const moreWinners = {
   title: "Победителей будет больше!",
   button: {
     text: "Купить билеты",
+    href: "http://stoloto.ru/",
   },
   ntv: {
     logo: {

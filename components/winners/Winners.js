@@ -10,6 +10,7 @@ import Carousel from "@/components/baseComponents/gui/carousel/Carousel";
 import Winner from "@/components/winner/Winner";
 import {EffectCoverflow, Navigation, Pagination} from "swiper/modules";
 import Modal from "@/components/modal/Modal";
+import CustomButton from "@/components/customButton/CustomButton";
 
 export default function Winners({className, children}) {
   const settingsSwiper = {
@@ -70,7 +71,11 @@ export default function Winners({className, children}) {
           <div id="swiper-right" className={classNames(styles.winners__arrow, styles.winners__arrow_right)}>
             <Picture imgAttr={{...winners.arrowIcon, className: styles.winners__arrowImg}} />
           </div>
-          <Button>{winners.button.text}</Button>
+          <CustomButton>
+            <a className={styles.winners__btnLink} href={winners.button.href}>
+              {winners.button.text}
+            </a>
+          </CustomButton>
         </div>
       </div>
     </section>

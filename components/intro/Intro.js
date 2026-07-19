@@ -34,35 +34,15 @@ export default function Intro({className, children}) {
             ))}
           </div>
           <div className={styles.intro_paddingLeft}>
-            <Button className={styles.intro__btn}>{intro.button.text}</Button>
+            <CustomButton className={styles.intro__btn}>
+              <a className={styles.intro__btnLink} href={intro.button.href}>
+                {intro.button.text}
+              </a>
+            </CustomButton>
             <Ntv />
           </div>
         </div>
       </div>
-
-      {/*<div className={styles.intro__content}>*/}
-      {/*  <div className={styles.intro__contentLeft}>*/}
-      {/*    <div className={styles.intro_bg_red}></div>*/}
-      {/*    <h1 className={styles.intro__title}>{intro.title}</h1>*/}
-      {/*    <div className={styles.intro__list}>*/}
-      {/*      {intro.list.map(t => (*/}
-      {/*        <div className={classNames(styles.intro__wrapItem, t.style && styles[t.style])}>*/}
-      {/*          <div className={classNames(styles.intro__itemText)}>*/}
-      {/*            {t.content.map(c => (*/}
-      {/*              <span className={classNames(styles.intro__text, c.style && styles[c.style])}>{c.text}</span>*/}
-      {/*            ))}*/}
-      {/*          </div>*/}
-      {/*        </div>*/}
-      {/*      ))}*/}
-      {/*    </div>*/}
-      {/*    <Button className={styles.intro__btn}>{intro.button.text}</Button>*/}
-      {/*    <Ntv />*/}
-      {/*  </div>*/}
-      {/*  <div className={styles.intro__contentRight}>*/}
-      {/*    <div className={styles.intro_bg_img}></div>*/}
-      {/*    <img className={styles.intro__menImg} src={"/static/images/men.png"} alt="intro-men" />*/}
-      {/*  </div>*/}
-      {/*</div>*/}
     </div>
   );
 }

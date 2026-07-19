@@ -15,7 +15,11 @@ export default function MoreWinners({className, children}) {
         {moreWinners.title}
       </Title>
       <div className={styles.moreWinners__content}>
-        <CustomButton className={styles.moreWinners__btn}>{moreWinners.button.text}</CustomButton>
+        <CustomButton className={styles.moreWinners__btn}>
+          <a href={moreWinners.button.href} className={styles.moreWinners__btnLink}>
+            {moreWinners.button.text}
+          </a>
+        </CustomButton>
         <Ntv className={styles.moreWinners__ntv} />
       </div>
     </div>

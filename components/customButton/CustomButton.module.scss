@@ -23,4 +23,5 @@
   @include option(font-size, 19, 22);
   font-weight: $FW-SEMI_BOLD;
   border-radius: 4px;
+  text-decoration: none;
 }

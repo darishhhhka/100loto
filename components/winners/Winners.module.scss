@@ -50,6 +50,7 @@
 
   &__img {
     width: 100%;
+    display: block;
   }
 
   &__info {
@@ -92,5 +93,9 @@
 
   &__arrowImg {
     width: 100%;
+  }
+
+  &__btnLink {
+    text-decoration: none;
   }
 }

@@ -29,7 +29,11 @@ export default function Results({className, children}) {
           />
         ))}
       </div>
-      <Button className={styles.results__btn}>Участвовать</Button>
+      <CustomButton className={styles.results__btn}>
+        <a className={styles.results__btnLink} href={results.button.href}>
+          {results.button.text}
+        </a>
+      </CustomButton>
     </div>
   );
 }

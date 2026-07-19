@@ -57,7 +57,11 @@ export default function Security({className, children}) {
           <div>
             <img className={styles.security__img} {...security.video} />
           </div>
-          <CustomButton>Купить билет</CustomButton>
+          <CustomButton>
+            <a className={styles.security__btnLink} href={security.button.href}>
+              {security.button.text}
+            </a>
+          </CustomButton>
         </div>
       </div>
     </section>
