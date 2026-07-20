@@ -13,20 +13,40 @@
       }
     }
   }
-
-  z-index: 2;
+  position: relative;
   @include sectionLayer(0px, 0px);
-  justify-content: space-between;
-  background: url("/images/moreWinners/cosmos.png") no-repeat center/cover;
-  @include option(height, 780);
 
-  @include NOT-DESK {
-    background: url("/images/moreWinners/cosmosMobile.png") no-repeat center/cover;
+  &__bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  &__cosmosBg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    //height: 100%;
+  }
+
+  &__cosmosImg {
+    height: 100%;
+  }
+
+  &__content {
+    justify-content: space-between;
+    //@include option(height, 780);
+    z-index: 2;
   }
 
   &__title {
     @include option(font-size, 65, 34);
     @include option(width, 535, 379, 535);
+    @include option(margin-bottom, 301px, 0px, 301px);
   }
 
   &__content {
@@ -41,9 +61,10 @@
   }
 
   &__ntv {
+    @include option(margin-bottom, 0px, 408px, 0px);
     @include MOBILE {
       order: -1;
-      margin-bottom: auto;
+      //margin-bottom: auto;
     }
   }
 
@@ -55,5 +76,61 @@
 
   &__btnLink {
     text-decoration: none;
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__bgItem {
+    position: absolute;
+    z-index: 2;
+    animation-name: shineStar;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+  }
+
+  &__hatCosmonaut {
+    @include option(width, 245px);
+    @include option(right, 120px);
+    @include option(bottom, -64px);
+    animation: none;
+  }
+
+  &__item_0 {
+    @include option(width, 29px);
+    @include option(right, 82px);
+    @include option(bottom, 54px);
+    animation-delay: 1s;
+  }
+  &__item_1 {
+    @include option(width, 69px);
+    @include option(right, 142px);
+    @include option(bottom, -88px);
+    animation-delay: 0s;
+  }
+  &__item_2 {
+    @include option(width, 53px);
+    @include option(right, 343px);
+    @include option(bottom, 57px);
+    animation-delay: 0.8s;
+  }
+  &__item_3 {
+    @include option(width, 37px);
+    @include option(right, 308px);
+    @include option(bottom, 197px);
+    animation-delay: 0.2s;
+  }
+}
+
+@keyframes shineStar {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }

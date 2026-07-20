@@ -18,6 +18,7 @@ export default function Winners({className, children}) {
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: "1",
+    loop: true,
     coverflowEffect: {
       rotate: 0,
       stretch: 150,
@@ -48,34 +49,41 @@ export default function Winners({className, children}) {
 
   return (
     <section className={classNames(styles.winners, className)}>
-      <div className={styles.winners__header}>
-        <Title color="red">{winners.title}</Title>
-        <a className={styles.winners__link} href={winners.link.href}>
-          {winners.link.text}
-        </a>
-      </div>
-      <div className={styles.winners__content}>
-        <div className={styles.winners__imgBlock}>
-          <Picture
-            imgAttr={{...winners.imgMen.img, className: styles.winners__img}}
-            sourceData={winners.imgMen.sourceData}
-          />
+      <div className={styles.winners__bg}>
+        <div className={styles.winners__pattern}>
+          <Picture imgAttr={winners.imgPattern.img} />
         </div>
-        <div className={styles.winners__info}>
-          <div id="swiper-left" className={classNames(styles.winners__arrow, styles.winners__arrow_left)}>
-            <Picture imgAttr={{...winners.arrowIcon, className: styles.winners__arrowImg}} />
+      </div>
+      <div className={styles.winners__wrap}>
+        <div className={styles.winners__header}>
+          <Title color="red">{winners.title}</Title>
+          <a className={styles.winners__link} href={winners.link.href}>
+            {winners.link.text}
+          </a>
+        </div>
+        <div className={styles.winners__content}>
+          <div className={styles.winners__imgBlock}>
+            <Picture
+              imgAttr={{...winners.imgMen.img, className: styles.winners__img}}
+              sourceData={winners.imgMen.sourceData}
+            />
           </div>
-          <div className={styles.winners__carouselWrap}>
-            <Carousel settings={settingsSwiper} item={Winner} itemsData={winners.winners} />
+          <div className={styles.winners__info}>
+            <div id="swiper-left" className={classNames(styles.winners__arrow, styles.winners__arrow_left)}>
+              <Picture imgAttr={{...winners.arrowIcon, className: styles.winners__arrowImg}} />
+            </div>
+            <div className={styles.winners__carouselWrap}>
+              <Carousel settings={settingsSwiper} item={Winner} itemsData={winners.winners} />
+            </div>
+            <div id="swiper-right" className={classNames(styles.winners__arrow, styles.winners__arrow_right)}>
+              <Picture imgAttr={{...winners.arrowIcon, className: styles.winners__arrowImg}} />
+            </div>
+            <CustomButton>
+              <a className={styles.winners__btnLink} href={winners.button.href}>
+                {winners.button.text}
+              </a>
+            </CustomButton>
           </div>
-          <div id="swiper-right" className={classNames(styles.winners__arrow, styles.winners__arrow_right)}>
-            <Picture imgAttr={{...winners.arrowIcon, className: styles.winners__arrowImg}} />
-          </div>
-          <CustomButton>
-            <a className={styles.winners__btnLink} href={winners.button.href}>
-              {winners.button.text}
-            </a>
-          </CustomButton>
         </div>
       </div>
     </section>

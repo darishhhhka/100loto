@@ -106,6 +106,19 @@ export const intro = {
       ],
     },
   },
+  imgCosmos: {
+    img: {
+      src: "/images/intro/intro-bg.png",
+      alt: "intro cosmos",
+    },
+  },
+
+  imgPattern: {
+    img: {
+      src: "/images/intro/pattern.svg",
+      alt: "pattern",
+    },
+  },
 };
 
 export const winners = {
@@ -119,6 +132,13 @@ export const winners = {
     img: {
       src: "/images/winners/man.png",
       alt: "men",
+    },
+  },
+
+  imgPattern: {
+    img: {
+      src: "/images/winners/pattern.svg",
+      alt: "pattern",
     },
   },
 
@@ -298,7 +318,21 @@ export const results = {
   ],
 
   rocket: {
-    src: "/images/results/rocket.png",
+    imgAttr: {
+      src: "/images/results/rocket.png",
+    },
+  },
+
+  star: {
+    imgAttr: {
+      src: "/images/results/star.svg",
+    },
+  },
+
+  imgPattern: {
+    img: {
+      src: "/images/results/pattern.svg",
+    },
   },
 
   button: {
@@ -578,6 +612,33 @@ export const moreWinners = {
     },
     text: "Смотрите трансляцию 1435-го тиража 10 апреля на НТВ",
   },
+
+  bgImg: {
+    img: {
+      src: "/images/moreWinners/cosmos.png",
+      alt: "cosmos",
+    },
+
+    sourceData: {
+      sources: [
+        {
+          srcSet: "/images/moreWinners/cosmosMobile.png",
+          type: "image/png",
+          media: "(max-width: 768px)",
+        },
+      ],
+    },
+  },
+
+  hatCosmonaut: {
+    src: "/images/moreWinners/hat.png",
+  },
+
+  star: {
+    imgAttr: {
+      src: "/images/moreWinners/star.svg",
+    },
+  },
 };
 
 export const footer = {
@@ -632,10 +693,6 @@ export const footer = {
       "WLA — международное объединение компаний-операторов государственных лотерей.",
       "ELA — объединение лотерейных компаний из Европы и соседних регионов.",
     ],
-  },
-
-  img: {
-    src: "/images/footer/hatCosmonaut.png",
   },
 };
 

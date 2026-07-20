@@ -7,15 +7,12 @@
   background-color: #0f1114;
   font-family: "Roboto", sans-serif;
 
-  &__hatCosmonaut {
-    z-index: 2;
-    @include option(width, 314);
+  &__bg {
     position: absolute;
-    @include option(right, 82px);
-    @include option(top, -225px);
-    @include NOT-DESK {
-      display: none;
-    }
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
   }
 
   &__hatCosmonautImg {

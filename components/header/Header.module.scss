@@ -7,7 +7,7 @@
   align-items: start;
   @include option(padding, 40px 41px 0 41px, 19px 18px 0 18px);
   color: $WHITE;
-
+  z-index: 10;
   &__logo {
     @include option(width, 95, 64);
   }

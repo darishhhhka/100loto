@@ -1,0 +1,16 @@
+@use "@styles/base" as *;
+
+.customParallax {
+  @mixin mod($mod) {
+    @include modifier("customParallax", $mod) {
+      @content;
+    }
+  }
+  @mixin mods($mods...) {
+    @each $mod in $mods {
+      .customParallax_#{$mod} & {
+        @content;
+      }
+    }
+  }
+}

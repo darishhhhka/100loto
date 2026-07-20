@@ -15,11 +15,27 @@
   }
   position: relative;
   padding-bottom: 0;
-  @include sectionLayer(75px, 44px);
+
   @include option(padding-bottom, 0);
-  background:
-    url("/images/bg-pattern-white.svg") left,
-    radial-gradient(circle at 10% 100%, #ffedbe -20%, #ffffff 50%);
+  background: radial-gradient(circle at 10% 100%, #ffedbe -20%, #ffffff 50%);
+
+  &__wrap {
+    position: relative;
+    @include sectionLayer(75px, 44px);
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+  }
+
+  &__pattern {
+    @include option(width, 480px);
+  }
 
   &__header {
     align-self: start;
@@ -42,6 +58,7 @@
     @include option(left, 137px);
     bottom: 0;
     @include option(width, 354);
+    @include option(height, 544px);
     margin-top: auto;
     @include NOT-DESK {
       display: none;

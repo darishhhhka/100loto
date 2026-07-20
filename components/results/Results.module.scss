@@ -17,23 +17,24 @@
   @include sectionLayer(58px, 40px);
   background-color: #ff3030;
   @include option(padding, 75px 140px, 47px 19px);
-  background:
-    url("/images/bg-pattern.svg") no-repeat right 30%,
-    linear-gradient(to right, #ff684a, #ff3030);
+  background: linear-gradient(to right, #ff684a, #ff3030);
 
-  &__rocket {
-    @include option(width, 352);
+  &__bg {
+    //overflow: hidden;
     position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
     right: 0;
-    top: -20%;
-
-    @include NOT-DESK {
-      display: none;
-    }
   }
 
-  &__rocketImg {
-    width: 100%;
+  &__patternImg {
+    @include option(width, 480px, 414px);
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
   }
 
   &__list {
@@ -69,5 +70,66 @@
 
   &__btnLink {
     text-decoration: none;
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__rocket {
+    @include option(width, 203px);
+    position: absolute;
+    @include option(right, 90px);
+    @include option(top, -129px);
+  }
+
+  &__bgItem {
+    position: absolute;
+    animation-name: shineStar;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+
+    transition: all 1s ease-in-out;
+    @include NOT-DESK {
+      display: none;
+    }
+  }
+
+  &__star_0 {
+    @include option(width, 29px);
+    @include option(right, 54px);
+    @include option(top, 24px);
+    animation-delay: 1s;
+  }
+  &__star_1 {
+    @include option(width, 53px);
+    @include option(right, 285px);
+    @include option(top, 17px);
+    animation-delay: 0.2s;
+  }
+
+  &__star_2 {
+    @include option(width, 37px);
+    @include option(right, 340px);
+    @include option(top, -97px);
+    animation-delay: 0.6s;
+  }
+  &__star_3 {
+    @include option(width, 69px);
+    @include option(right, 84px);
+    @include option(top, -144px);
+    animation-delay: 0.8s;
+  }
+}
+
+@keyframes shineStar {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }

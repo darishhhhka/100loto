@@ -12,11 +12,25 @@ import CustomButton from "@/components/customButton/CustomButton";
 export default function Intro({className, children}) {
   return (
     <div className={classNames(styles.intro, className)}>
+      <div className={styles.intro__bg}>
+        <div className={styles.intro__redBg}>
+          <Picture imgAttr={intro.imgPattern.img} />
+        </div>
+        <div className={styles.intro__cosmos}>
+          <Picture imgAttr={{...intro.imgCosmos.img, className: styles.intro__imgCosmos}} />
+        </div>
+        <div className={styles.intro__men}>
+          <Picture
+            imgAttr={{...intro.imgMen.img, className: styles.intro__imgMen}}
+            sourceData={intro.imgMen.sourceData}
+          />
+        </div>
+      </div>
       <Header className={styles.intro__header} />
       <div className={styles.intro__content}>
-        <div className={styles.intro__imgBlock}>
-          <Picture imgAttr={{...intro.imgMen.img, className: styles.intro__img}} sourceData={intro.imgMen.sourceData} />
-        </div>
+        {/*<div className={styles.intro__imgBlock}>*/}
+        {/*  <Picture imgAttr={{...intro.imgMen.img, className: styles.intro__img}} sourceData={intro.imgMen.sourceData} />*/}
+        {/*</div>*/}
         <div className={styles.intro__info}>
           <h1 className={styles.intro__title}>{intro.title}</h1>
           <div className={styles.intro__prizes}>
