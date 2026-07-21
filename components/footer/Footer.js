@@ -8,17 +8,11 @@ import {picture} from "framer-motion/m";
 export default function Footer() {
   return (
     <footer className={classNames(styles.footer)}>
-      {/*<div className={styles.footer__bg}>*/}
-      {/*  <div className={styles.footer__hatCosmonaut}>*/}
-      {/*    <Picture imgAttr={{...footer.img, className: styles.footer__hatCosmonautImg}} />*/}
-      {/*  </div>*/}
-      {/*</div>*/}
-
       <div className={styles.footer__leftColumn}>
         <div className={styles.footer__logo}>
           <Picture imgAttr={footer.logo} />
         </div>
-        <div className={styles.footer__copyright}>
+        <div className={classNames(styles.footer__copyright)}>
           {footer.copyright.map((t, index) => (
             <p className={styles.footer__textGrey} key={`footer-copyright-${index}`}>
               {t}
@@ -36,24 +30,28 @@ export default function Footer() {
       </div>
       <div className={styles.footer__rightColumn}>
         <div className={styles.footer__partnersBlock}>
-          <div className={styles.footer__parntersImg}>
+          <div className={styles.footer__parntersImgWrap}>
             {footer.partners.logo.map((img, index) => (
-              <Picture key={`partners-logo-${index}`} imgAttr={img} />
+              <div className={styles.footer__parntersImg} key={`footer-partners-${index}`}>
+                <Picture imgAttr={img} />
+              </div>
             ))}
           </div>
           <p className={styles.footer__textWhite}>{footer.partners.organizators}</p>
         </div>
         <div className={styles.footer__partnersBlock}>
-          <div>
+          <div className={styles.footer__associationsImg}>
             <Picture imgAttr={footer.partners.logoAssociations} />
           </div>
-          <div className={styles.footer__copyright}>
-            <p className={styles.footer__textWhite}>{footer.partners.right}</p>
-            {footer.partners.note.map((n, index) => (
-              <p className={styles.footer__textGrey} key={`footer-note-${index}`}>
-                {n}
-              </p>
-            ))}
+          <div className={styles.footer__associationsText}>
+            <p className={classNames(styles.footer__textWhite, styles.footer__textWhite_sm)}>{footer.partners.right}</p>
+            <div className={styles.footer__note}>
+              {footer.partners.note.map((n, index) => (
+                <p className={styles.footer__textGrey} key={`footer-note-${index}`}>
+                  {n}
+                </p>
+              ))}
+            </div>
           </div>
         </div>
       </div>

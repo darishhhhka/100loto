@@ -2,7 +2,7 @@
 
 .about {
   @mixin mod($mod) {
-    @include modifier("about", $mod) {
+    @include modifier("lineWrap", $mod) {
       @content;
     }
   }
@@ -16,24 +16,16 @@
 
   font-weight: $FW-BOLD;
   position: relative;
-  height: max-content;
+  //@include option(height, 1350px, 2000px);
 
   &__bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    height: 100%;
-    width: 100vw;
+    @include positionBg;
     background: radial-gradient(circle at 50% 70%, #ffffff, #ffe4b0);
-    @include MOBILE {
-      background: radial-gradient(circle at 50% 70%, #ffffff, #ffe4b0);
-    }
   }
 
   &__wrap {
-    @include sectionLayer(107px, 49px);
+    position: relative;
+    @include sectionLayer(80px, 49px, 76px 150px 106px, 47px 19px 61px);
   }
 
   &__doshed {
@@ -47,15 +39,23 @@
     }
   }
 
-  &__sputnik {
+  &__bgItem {
     position: absolute;
-    @include option(left, 170);
-    transform: translateY(-90%);
-    @include option(width, 234);
-
     @include NOT-DESK {
       display: none;
     }
+  }
+
+  &__sputnik {
+    @include option(left, 170px);
+    @include option(top, -174px);
+    @include option(width, 234px);
+  }
+
+  &__ring {
+    @include option(left, 193px);
+    @include option(top, -149px);
+    @include option(width, 190px);
   }
 
   &__sputnikImg {
@@ -63,26 +63,47 @@
   }
 
   &__list {
-    @include option(padding, 0px 44px, 0px 0px);
+    //position: absolute;
+    @include option(padding, 0px 50px 0px 44px, 0px 0px);
     width: 100%;
     display: flex;
     flex-direction: column;
+    @include option(gap, 0px, 42px);
+    @include option(height, 880px, 2088px, 2100px);
   }
 
   &__step {
     position: relative;
-
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    @include option(gap, 20, 38);
+    //@include option(height, 220px);
+    @include option(gap, 28px, 13px);
     @include NOT-MOB-2 {
-      @for $i from 0 through 3 {
-        &_#{$i} {
-          transform: translateY(-20% * $i);
+      &_0 {
+        & .about__lineWrap {
+          top: 0;
+          left: 27%;
         }
       }
+      &_1 {
+        transform: translateY(-45%);
+      }
+      &_2 {
+        transform: translateY(-75%);
+        & .about__lineWrap {
+          left: 15%;
+        }
+      }
+      &_3 {
+        transform: translateY(-98%);
+      }
+      //@for $i from 0 through 3 {
+      //  &_#{$i} {
+      //    transform: translateY(-40% * $i);
+      //  }
+      //}
     }
 
     &_left {
@@ -97,14 +118,15 @@
   &__number {
     color: $RED;
     @include option(font-size, 52px);
+    @include option(line-height, 55px);
   }
 
   &__info {
     display: flex;
-    align-items: center;
+    align-items: start;
     @include option(gap, 12);
     z-index: 2;
-
+    line-height: 142%;
     @include MOBILE {
       order: 2;
     }
@@ -113,7 +135,7 @@
   &__text {
     @include option(font-size, 18px);
     @include option(max-width, 300);
-
+    align-self: center;
     &_red {
       color: $RED;
     }
@@ -124,26 +146,6 @@
     @include MOBILE {
       order: 1;
     }
-  }
-
-  //&__img {
-  //  //display: block;
-  //  //width: 100%;
-  //  //@include option(width, 242px, 311px);
-  //  &_abs {
-  //    position: absolute;
-  //    top: 35%;
-  //    left: 20%;
-  //  }
-  //}
-
-  &__svgMask {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    //background-color: red;
   }
 
   &__line {
@@ -159,19 +161,17 @@
     height: max-content;
 
     //clip-path: polygon(0 0, 100% 100%);
-
+    top: 20%;
     &_right {
-      top: 10%;
       left: 20%;
     }
 
     &_left {
-      top: 40%;
       right: 20%;
     }
+  }
 
-    &_2 {
-      top: 50%;
-    }
+  &__btn {
+    @include option(margin-top, 96px, 30px);
   }
 }

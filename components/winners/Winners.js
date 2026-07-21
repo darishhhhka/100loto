@@ -48,7 +48,7 @@ export default function Winners({className, children}) {
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   return (
-    <section className={classNames(styles.winners, className)}>
+    <section id="winners" className={classNames(styles.winners, className)}>
       <div className={styles.winners__bg}>
         <div className={styles.winners__pattern}>
           <Picture imgAttr={winners.imgPattern.img} />
@@ -78,11 +78,7 @@ export default function Winners({className, children}) {
             <div id="swiper-right" className={classNames(styles.winners__arrow, styles.winners__arrow_right)}>
               <Picture imgAttr={{...winners.arrowIcon, className: styles.winners__arrowImg}} />
             </div>
-            <CustomButton>
-              <a className={styles.winners__btnLink} href={winners.button.href}>
-                {winners.button.text}
-              </a>
-            </CustomButton>
+            <CustomButton>{winners.button.text}</CustomButton>
           </div>
         </div>
       </div>

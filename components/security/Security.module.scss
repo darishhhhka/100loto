@@ -13,22 +13,23 @@
       }
     }
   }
-  @include sectionLayer(56px, 22px);
+  @include sectionLayer(56px, 42px, 78px 150px 150px, 42px 17px 65px);
   background: linear-gradient(to bottom right, #6a0c0c, #320101);
-  @include option(padding, 75px 140px 150px 140px, 47px 19px);
 
   &__title {
     @include option(width, 945, 377, 945);
   }
 
   &__content {
-    //width: 100vw;
+    position: relative;
     display: flex;
     justify-content: center;
+
     @include option(gap, 20);
 
     @include NOT-DESK {
       flex-direction: column;
+      align-items: center;
     }
   }
 
@@ -39,6 +40,7 @@
       display: grid;
       grid-template-columns: auto auto;
       @include option(gap, 12px);
+      @include option(row-gap, 23px);
 
       @include MOBILE {
         display: none;
@@ -55,13 +57,6 @@
     }
   }
 
-  &__carousel {
-    width: 100vw;
-
-    &_none {
-    }
-  }
-
   &__right {
     display: flex;
     flex-direction: column;
@@ -73,8 +68,21 @@
     }
   }
 
+  &__btn {
+    @include DESKTOP {
+      position: absolute;
+      @include option(left, 656px);
+      @include option(top, 293px);
+    }
+    //transform: translateX(50%);
+  }
+
   &__img {
     @include option(width, 443, 375);
+    @include option(margin-bottom, 0px, 28px);
+    @include NOT-DESK {
+      order: -1;
+    }
   }
 
   &__carouselWrap {
@@ -82,6 +90,7 @@
     justify-content: center;
     @include option(width, 414px);
     --carousel-slide-bg: none;
+    @include option(margin-bottom, 40px);
     @include NOT-MOB-2 {
       display: none;
     }

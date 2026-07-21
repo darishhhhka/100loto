@@ -9,8 +9,10 @@ import Picture from "@/components/baseComponents/gui/picture/Picture";
 export default function Ntv({className}) {
   return (
     <div className={classNames(styles.ntv, className)}>
-      <Picture imgAttr={ntv.logo} />
-      <p>{ntv.text}</p>
+      <div className={styles.ntv__img}>
+        <Picture imgAttr={ntv.logo} />
+      </div>
+      <p className={styles.ntv__text}>{ntv.text}</p>
     </div>
   );
 }

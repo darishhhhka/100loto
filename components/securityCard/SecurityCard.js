@@ -4,7 +4,7 @@ import classNames from "classnames";
 import styles from "./SecurityCard.module.scss";
 import Picture from "@/components/baseComponents/gui/picture/Picture";
 
-export default function SecurityCard({className, title, description, icon, isActive, isPrev, isNext, children}) {
+export default function SecurityCard({className, title, description, icon, isActive, isPrev, isNext, paySistem}) {
   return (
     <div
       className={classNames(
@@ -20,7 +20,15 @@ export default function SecurityCard({className, title, description, icon, isAct
         <Picture imgAttr={icon} />
       </div>
       <p className={styles.securityCard__description}>{description}</p>
-      <div className={styles.securityCard__children}>{children}</div>
+      {paySistem && (
+        <div className={styles.securityCard__children}>
+          {paySistem.map((img, index) => (
+            <div className={styles.securityCard__paySistem}>
+              <Picture imgAttr={img} key={`security-card-img-${index}`} />
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

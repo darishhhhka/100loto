@@ -19,12 +19,13 @@
   flex-direction: column;
   @include option(gap, 10, 26);
   border-radius: 6px;
-  @include option(font-size, 13, 17);
+  @include option(font-size, 13px, 15px);
   @include option(width, 270, 319);
   @include option(height, 238, 350);
-  @include option(padding, 19px 17px, 31px 19px);
+  @include option(padding, 19px 17px, 31px 19px 39px);
   position: relative;
   background: $WHITE;
+  text-align: left;
 
   &_active {
     background-color: $WHITE;
@@ -42,18 +43,22 @@
   }
 
   &__title {
+    @include option(font-size, 13px, 17px);
     text-transform: uppercase;
     font-weight: $FW-BOLD;
-    @include option(font-size, 13, 17);
   }
 
   &__description {
-    @include option(line-height, 17);
+    @include option(line-height, 17px, 22px);
   }
 
   &__children {
     display: flex;
     @include option(gap, 21);
     margin-top: auto;
+  }
+
+  &__paySistem {
+    @include option(height, 12px, 21px);
   }
 }

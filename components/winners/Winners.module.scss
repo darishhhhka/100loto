@@ -21,15 +21,11 @@
 
   &__wrap {
     position: relative;
-    @include sectionLayer(75px, 44px);
+    @include sectionLayer(67px, 38px, 76px 148px 0 148px, 44px 19px 0px);
   }
 
   &__bg {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    @include positionBg;
     overflow: hidden;
   }
 
@@ -39,6 +35,9 @@
 
   &__header {
     align-self: start;
+    display: flex;
+    flex-direction: column;
+    @include option(gap, 8px);
   }
 
   &__link {
@@ -75,7 +74,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    @include option(gap, 28px, 35);
+    @include option(gap, 28px, 29px);
     @include option(padding-bottom, 65);
     @include option(width, 600px, 372px);
     --carousel-overflow: visible;
@@ -96,14 +95,14 @@
     z-index: 4;
     @include option(width, 60, 52, 60);
     position: absolute;
-    @include option(top, 107px, 90px);
+    @include option(top, 109px, 90px);
     cursor: pointer;
 
     &_left {
-      @include option(left, -82px, 0px, -82px);
+      @include option(left, -63px, 0px, -82px);
     }
     &_right {
-      @include option(right, -82px, 0px, -82px);
+      @include option(right, -63px, 0px, -82px);
       transform: rotate(-180deg);
     }
   }

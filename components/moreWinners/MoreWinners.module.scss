@@ -14,7 +14,7 @@
     }
   }
   position: relative;
-  @include sectionLayer(0px, 0px);
+  @include sectionLayer(0px, 0px, 92px 153px, 42px 19px 57px);
 
   &__bg {
     position: absolute;
@@ -25,28 +25,24 @@
   }
 
   &__cosmosBg {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    //height: 100%;
+    @include positionBg;
   }
 
   &__cosmosImg {
     height: 100%;
   }
 
-  &__content {
-    justify-content: space-between;
-    //@include option(height, 780);
-    z-index: 2;
+  &__wrap {
+    @include option(padding-left, 57px, 0px);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
 
   &__title {
     @include option(font-size, 65, 34);
     @include option(width, 535, 379, 535);
-    @include option(margin-bottom, 301px, 0px, 301px);
+    @include option(margin-bottom, 280px, 0px, 301px);
   }
 
   &__content {
@@ -56,19 +52,19 @@
     flex-direction: column;
     justify-content: end;
     align-items: start;
-    @include option(gap, 20);
-    //align-self: start;
+    @include option(gap, 0px, 10px);
+    z-index: 2;
   }
 
   &__ntv {
-    @include option(margin-bottom, 0px, 408px, 0px);
+    @include option(margin-bottom, 0px, 415px, 0px);
     @include MOBILE {
       order: -1;
-      //margin-bottom: auto;
     }
   }
 
   &__btn {
+    @include option(margin-bottom, 22px, 0px, 22px);
     @include MOBILE {
       align-self: center;
     }
@@ -88,6 +84,10 @@
     animation-name: shineStar;
     animation-duration: 3s;
     animation-iteration-count: infinite;
+
+    @include NOT-DESK {
+      display: none;
+    }
   }
 
   &__hatCosmonaut {

@@ -8,14 +8,22 @@ import Title from "@/components/title/Title";
 import DownloadStoreCard from "@/components/downloadStoreCard/DownloadStoreCard";
 import Picture from "@/components/baseComponents/gui/picture/Picture";
 import {picture} from "framer-motion/m";
+import {MouseParallax} from "react-just-parallax";
 
 export default function DownloadApp({className, children}) {
   return (
     <section id="apps" className={classNames(styles.downloadApp, className)}>
-      <div className={styles.downloadApp__cosmonaut}>
-        <Picture imgAttr={{...downloadApp.cosmonautImg, className: styles.downloadApp__cosmonautImg}} />
+      <div className={styles.downloadApp__bg}>
+        <div className={styles.downloadApp__cosmonaut}>
+          <MouseParallax strength={-0.02}>
+            <Picture imgAttr={downloadApp.cosmonautImg} />
+          </MouseParallax>
+        </div>
       </div>
-      <Title color="red">{downloadApp.title}</Title>
+
+      <Title className={styles.downloadApp__title} color="red">
+        {downloadApp.title}
+      </Title>
       <div className={styles.downloadApp__content}>
         <div className={styles.downloadApp__info}>
           <div className={styles.downloadApp__cardList}>
@@ -25,7 +33,9 @@ export default function DownloadApp({className, children}) {
           </div>
           <div className={styles.downloadApp__storeList}>
             {downloadApp.storeList.map((store, index) => (
-              <DownloadStoreCard key={`download-store-${index}`} {...store} />
+              <div className={styles.downloadApp__store}>
+                <Picture key={`download-store-${index}`} imgAttr={store.icon} />
+              </div>
             ))}
           </div>
         </div>

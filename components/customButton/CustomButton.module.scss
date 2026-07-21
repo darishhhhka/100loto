@@ -42,6 +42,15 @@
     animation-timing-function: linear;
     animation-iteration-count: infinite;
   }
+
+  &__link {
+    display: block;
+    @include option(line-height, 68px);
+    //line-height: 68px;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+  }
 }
 @keyframes shineButton {
   from {

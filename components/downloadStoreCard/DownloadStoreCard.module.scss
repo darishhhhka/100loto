@@ -14,7 +14,8 @@
     }
   }
   font-family: "SF UI Text";
-  @include option(width, 186, 164);
+  @include option(width, 186px, 164px);
+  @include option(height, 54px, 48px);
   background-color: $BLACK;
   border-radius: 8px;
   color: $WHITE;

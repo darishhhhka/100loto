@@ -20,10 +20,7 @@ export default function Intro({className, children}) {
           <Picture imgAttr={{...intro.imgCosmos.img, className: styles.intro__imgCosmos}} />
         </div>
         <div className={styles.intro__men}>
-          <Picture
-            imgAttr={{...intro.imgMen.img, className: styles.intro__imgMen}}
-            sourceData={intro.imgMen.sourceData}
-          />
+          <Picture imgAttr={intro.imgMen.img} sourceData={intro.imgMen.sourceData} />
         </div>
       </div>
       <Header className={styles.intro__header} />
@@ -48,10 +45,8 @@ export default function Intro({className, children}) {
             ))}
           </div>
           <div className={styles.intro_paddingLeft}>
-            <CustomButton className={styles.intro__btn}>
-              <a className={styles.intro__btnLink} href={intro.button.href}>
-                {intro.button.text}
-              </a>
+            <CustomButton className={styles.intro__btn} href={intro.button.href}>
+              {intro.button.text}
             </CustomButton>
             <Ntv />
           </div>

@@ -8,6 +8,7 @@ import Button from "@/components/button/Button";
 import Ntv from "@/components/ntv/Ntv";
 import CustomButton from "@/components/customButton/CustomButton";
 import Picture from "@/components/baseComponents/gui/picture/Picture";
+import {MouseParallax} from "react-just-parallax";
 
 export default function MoreWinners({className, children}) {
   const stars = [];
@@ -15,13 +16,15 @@ export default function MoreWinners({className, children}) {
   for (let i = 0; i < 4; i++) {
     stars.push(
       <div className={classNames(styles.moreWinners__bgItem, styles[`moreWinners__item_${i}`])}>
-        <Picture imgAttr={{...moreWinners.star.imgAttr, className: styles.moreWinners__img}} />
+        <MouseParallax strength={-0.01 * i}>
+          <Picture imgAttr={{...moreWinners.star.imgAttr, className: styles.moreWinners__img}} />
+        </MouseParallax>
       </div>,
     );
   }
 
   return (
-    <div className={classNames(styles.moreWinners, className)}>
+    <section className={classNames(styles.moreWinners, className)}>
       <div className={styles.moreWinners__bg}>
         <div className={styles.moreWinners__cosmosBg}>
           <Picture
@@ -31,7 +34,9 @@ export default function MoreWinners({className, children}) {
         </div>
 
         <div className={classNames(styles.moreWinners__hatCosmonaut, styles.moreWinners__bgItem)}>
-          <Picture imgAttr={{...moreWinners.hatCosmonaut, className: styles.moreWinners__img}} />
+          <MouseParallax strength={-0.01}>
+            <Picture imgAttr={{...moreWinners.hatCosmonaut, className: styles.moreWinners__img}} />
+          </MouseParallax>
         </div>
         {stars}
       </div>
@@ -39,16 +44,12 @@ export default function MoreWinners({className, children}) {
         <Title className={styles.moreWinners__title} color="white">
           {moreWinners.title}
         </Title>
-        <div className={styles.moreWinners__content}>
-          <CustomButton className={styles.moreWinners__btn}>
-            <a href={moreWinners.button.href} className={styles.moreWinners__btnLink}>
-              {moreWinners.button.text}
-            </a>
-          </CustomButton>
+        <div className={styles.moreWinners__wrap}>
+          <CustomButton className={styles.moreWinners__btn}>{moreWinners.button.text}</CustomButton>
           <Ntv className={styles.moreWinners__ntv} />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

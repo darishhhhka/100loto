@@ -21,7 +21,7 @@ export default function Security({className, children}) {
     slidesPerView: "auto",
     loop: true,
     coverflowEffect: {
-      scale: 0.8,
+      scale: 0.9,
       rotate: 0,
       stretch: 250,
       depth: 0,
@@ -38,31 +38,29 @@ export default function Security({className, children}) {
       </Title>
       <div className={styles.security__content}>
         <div className={styles.security__carouselWrap}>
-          <Carousel
-            className={styles.security__carousel_none}
-            settings={settingsSwiper}
-            item={SecurityCard}
-            itemsData={security.card}
-          />
+          <Carousel settings={settingsSwiper} item={SecurityCard} itemsData={security.card} />
         </div>
         <div className={classNames(styles.security__list, styles.security__list_desktop)}>
           {security.card.map((card, index) => (
-            <SecurityCard key={`security-card-${index}`} {...card}>
-              {card.images &&
-                card.images.map((img, index) => <Picture imgAttr={img} key={`security-card-img-${index}`} />)}
-            </SecurityCard>
+            <SecurityCard key={`security-card-${index}`} {...card} />
           ))}
         </div>
-        <div className={styles.security__right}>
-          <div>
-            <img className={styles.security__img} {...security.video} />
-          </div>
-          <CustomButton>
-            <a className={styles.security__btnLink} href={security.button.href}>
-              {security.button.text}
-            </a>
-          </CustomButton>
+
+        <div className={styles.security__img}>
+          <Picture imgAttr={security.video} />
         </div>
+        <CustomButton className={styles.security__btn}>{security.button.text}</CustomButton>
+
+        {/*<div className={styles.security__right}>*/}
+        {/*  <div>*/}
+        {/*    <img className={styles.security__img} {...security.video} />*/}
+        {/*  </div>*/}
+        {/*  <CustomButton className={styles.security__btn}>*/}
+        {/*    <a className={styles.security__btnLink} href={security.button.href}>*/}
+        {/*      {security.button.text}*/}
+        {/*    </a>*/}
+        {/*  </CustomButton>*/}
+        {/*</div>*/}
       </div>
     </section>
   );

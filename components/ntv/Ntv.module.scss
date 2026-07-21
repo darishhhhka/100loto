@@ -14,11 +14,20 @@
     }
   }
   text-transform: none;
-  @include option(font-size, 13);
-  font-weight: $FW-SEMI_BOLD;
+  @include option(font-size, 13px);
+  //font-weight: $FW-SEMI_BOLD;
   display: flex;
   align-items: center;
   @include option(gap, 16, 12);
-  @include option(width, 325, 321);
+  @include option(width, 344px, 321px);
   color: $WHITE;
+
+  &__img {
+    @include option(width, 46px, 42px);
+    @include option(height, 46px, 42px);
+  }
+
+  &__text {
+    @include option(width, 280px);
+  }
 }

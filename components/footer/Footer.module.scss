@@ -2,47 +2,44 @@
 
 .footer {
   position: relative;
-  @include sectionLayer(86, 44);
-  flex-direction: row;
+  @include option(padding, 80px 207px 84px 207px, 15px 33px 39px 21px);
+  display: flex;
+  @include option(gap, 86px, 43px);
   background-color: #0f1114;
   font-family: "Roboto", sans-serif;
-
-  &__bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-  }
-
-  &__hatCosmonautImg {
-    width: 100%;
-  }
+  width: 100vw;
 
   @include MOBILE {
     flex-direction: column;
   }
 
+  &__leftColumn {
+    @include option(width, 610px, 363px, 610px);
+  }
+
   &__logo {
-    @include option(margin-bottom, 31, 13);
+    @include option(margin-top, 12px);
+    @include option(margin-bottom, 27px, 9px);
+    @include option(width, 140px);
   }
 
   &__copyright {
     display: flex;
     flex-direction: column;
-    @include option(gap, 14, 18);
+    @include option(gap, 15px);
     @include option(margin-bottom, 29, 45);
   }
 
   &__textGrey {
     color: #7f858a;
     @include option(font-size, 10px);
+    @include option(line-height, 15px);
   }
 
   &__line {
     height: 0.5px;
     background-color: #f3f6f8;
-    @include option(margin-bottom, 33, 43);
+    @include option(margin-bottom, 30px, 40px);
   }
 
   &__mediaList {
@@ -51,29 +48,56 @@
   }
 
   &__rightColumn {
+    @include option(width, 330px);
     display: flex;
     flex-direction: column;
-    @include option(gap, 25, 35);
+    @include option(gap, 20px, 18px);
+  }
+
+  &__associationsText {
+    @include option(padding, 0px, 7px 5px);
+  }
+
+  &__parntersImgWrap {
+    display: flex;
+    flex-direction: row;
+    @include option(gap, 31px, 11px);
   }
 
   &__parntersImg {
-    display: flex;
-    flex-direction: row;
-    @include option(gap, 31, 11);
+    //@include option(height, 51px, 39px);
+    @include option(width, 46px, 35px);
   }
 
   &__textWhite {
-    @include option(font-size, 14, 12);
+    @include option(font-size, 14px, 12px);
     color: $WHITE;
+
+    &_sm {
+      @include option(font-size, 10px);
+      @include option(line-height, 15px);
+      @include option(margin-bottom, 18px, 12px);
+    }
   }
 
   &__partnersBlock {
     display: flex;
     flex-direction: column;
-    @include option(gap, 17, 18);
-
+    @include option(gap, 13px, 18);
     @include MOBILE {
       flex-direction: row;
+      align-items: start;
     }
+  }
+
+  &__associationsImg {
+    flex-shrink: 0;
+    @include option(width, 92px, 78px);
+  }
+
+  &__note {
+    display: flex;
+    flex-direction: column;
+    @include option(gap, 9px);
   }
 }

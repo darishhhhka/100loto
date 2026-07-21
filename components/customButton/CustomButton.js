@@ -58,7 +58,9 @@ const CustomButton = forwardRef(function (
       target={target}
       {...rest}
     >
-      {children}
+      <a className={styles.customButton__link} href={href}>
+        {children}
+      </a>
       {/*<div className={classNames(styles.customButton__border, styles.customButton__border_right)} />*/}
       {/*<div className={classNames(styles.customButton__border, styles.customButton__border_full)} />*/}
       {/*<div className={classNames(styles.customButton__border, styles.customButton__border_bottom)} />*/}

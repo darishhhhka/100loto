@@ -7,29 +7,33 @@ import {results} from "@/constants/copyright";
 import ResultCard from "@/components/resultCard/ResultCard";
 import CustomButton from "@/components/customButton/CustomButton";
 import Picture from "@/components/baseComponents/gui/picture/Picture";
-import Button from "@/components/button/Button";
-import CustomParallax from "@/components/customParallax/CustomParallax";
+import {MouseParallax} from "react-just-parallax";
 
 export default function Results({className, children}) {
   const stars = [];
 
   for (let i = 0; i < 4; i++) {
     stars.push(
-      <CustomParallax className={classNames(styles[`results__star_${i}`], styles.results__bgItem)}>
-        <Picture imgAttr={{...results.star.imgAttr, className: styles.results__img}} />
-      </CustomParallax>,
+      <div className={classNames(styles[`results__star_${i}`], styles.results__bgItem)}>
+        <MouseParallax isAbsolutelyPositioned strength={-0.01 * i}>
+          <Picture imgAttr={{...results.star.imgAttr, className: styles.results__img}} />
+        </MouseParallax>
+      </div>,
     );
   }
 
   return (
-    <section className={classNames(styles.results, className)}>
+    <section id="about" className={classNames(styles.results, className)}>
       <div className={styles.results__bg}>
         <div className={styles.results__patternImg}>
           <Picture imgAttr={results.imgPattern.img} />
         </div>
-        <CustomParallax className={styles.results__rocket}>
-          <Picture imgAttr={{...results.rocket.imgAttr, className: styles.results__img}} />
-        </CustomParallax>
+        <div className={classNames(styles.results__rocket, styles.results__bgItem)}>
+          <MouseParallax isAbsolutelyPositioned strength={-0.01}>
+            <Picture imgAttr={{...results.rocket.imgAttr, className: styles.results__img}} />
+          </MouseParallax>
+        </div>
+
         {stars}
       </div>
       <Title color="white">{results.title}</Title>
@@ -38,19 +42,16 @@ export default function Results({className, children}) {
           <ResultCard
             className={styles[`results__card_right_${index}`]}
             key={`result-card-${index}`}
-            img={res.image}
-            title={res.title}
-            subtitle={res.subtitle}
-            subtitleBold={res.subtitleBold}
+            {...res}
+            // img={res.image}
+            // title={res.title}
+            // subtitle={res.subtitle}
+            // subtitleBold={res.subtitleBold}
             left={index === 3}
           />
         ))}
       </div>
-      <CustomButton className={styles.results__btn}>
-        <a className={styles.results__btnLink} href={results.button.href}>
-          {results.button.text}
-        </a>
-      </CustomButton>
+      <CustomButton className={styles.results__btn}>{results.button.text}</CustomButton>
     </section>
   );
 }

@@ -113,6 +113,10 @@ export const intro = {
     },
   },
 
+  imgCar: {
+    img: {},
+  },
+
   imgPattern: {
     img: {
       src: "/images/intro/pattern.svg",
@@ -236,7 +240,7 @@ export const results = {
   list: [
     {
       image: {
-        img: {
+        imgAttr: {
           src: "/images/results/calendar.png",
           alt: "calendar",
         },
@@ -250,13 +254,15 @@ export const results = {
           ],
         },
       },
-
-      title: ">169 млн",
+      title: {
+        number: ">169",
+        text: "млн",
+      },
       subtitle: "билетов куплено",
     },
     {
       image: {
-        img: {
+        imgAttr: {
           src: "/images/results/cup.png",
           alt: "cup",
         },
@@ -270,13 +276,15 @@ export const results = {
           ],
         },
       },
-
-      title: "~8,4 млрд",
+      title: {
+        number: "~8,4",
+        text: "млрд",
+      },
       subtitle: "рублей выиграно",
     },
     {
       image: {
-        img: {
+        imgAttr: {
           src: "/images/results/safe.png",
           alt: "safe",
         },
@@ -291,12 +299,12 @@ export const results = {
         },
       },
 
-      title: "703",
+      title: {number: "703"},
       subtitle: "миллионера",
     },
     {
       image: {
-        img: {
+        imgAttr: {
           src: "/images/results/marka.png",
           alt: "marka",
         },
@@ -311,7 +319,7 @@ export const results = {
         },
       },
 
-      title: "«Русское лото»",
+      title: {text: "«Русское лото»"},
       subtitle: "получило премию",
       subtitleBold: "«Марка № 1 в России»",
     },
@@ -432,12 +440,17 @@ export const about = {
     },
   ],
 
-  img: {
+  imgSputnik: {
     src: "/images/about/sputnik.png",
+  },
+
+  imgRing: {
+    src: "/images/about/ring.svg",
   },
 
   button: {
     text: "Участвовать",
+    href: "http://stoloto.ru/",
   },
 };
 
@@ -461,7 +474,7 @@ export const security = {
       },
       description:
         "Мы не сохраняем номера банковских карт, платёжные  пароли и другие данные, которые вы вводите при оплате билетов. Вся информация хранится только на стороне платёжной системы, которую  вы выбираете сами.L",
-      images: [
+      paySistem: [
         {
           src: "/images/security/visa.svg",
           alt: "visa",
@@ -539,27 +552,11 @@ export const downloadApp = {
   storeList: [
     {
       icon: {
-        src: "/images/downloadApp/apple.svg",
+        src: "/images/downloadApp/IPhone.png",
         alt: "download",
       },
       forPhone: "Для",
       phone: "iPhone",
-    },
-    {
-      icon: {
-        src: "/images/downloadApp/huawei.png",
-        alt: "download",
-      },
-      forPhone: "Для",
-      phone: "Huawei",
-    },
-    {
-      icon: {
-        src: "/images/downloadApp/android.svg",
-        alt: "download",
-      },
-      forPhone: "Для других",
-      phone: "android",
     },
     {
       icon: {
@@ -571,16 +568,32 @@ export const downloadApp = {
     },
     {
       icon: {
-        src: "/images/downloadApp/xiomi.png",
+        src: "/images/downloadApp/huawei.png",
+        alt: "download",
+      },
+      forPhone: "Для",
+      phone: "Huawei",
+    },
+    {
+      icon: {
+        src: "/images/downloadApp/xiaomi.png",
         alt: "download",
       },
       forPhone: "Для",
       phone: "Xiaomi",
     },
+    {
+      icon: {
+        src: "/images/downloadApp/Android.png",
+        alt: "download",
+      },
+      forPhone: "Для других",
+      phone: "android",
+    },
   ],
   phoneImg: {
     img: {
-      src: "/images/downloadApp/iphone.png",
+      src: "/images/downloadApp/phone.png",
       alt: "phone",
     },
     sourceData: {
@@ -588,7 +601,7 @@ export const downloadApp = {
         {
           srcSet: "/images/downloadApp/iphoneMobile.png",
           type: "image/png",
-          media: "(max-width: 1024px)",
+          media: "(max-width: 768px)",
         },
       ],
     },
@@ -624,7 +637,7 @@ export const moreWinners = {
         {
           srcSet: "/images/moreWinners/cosmosMobile.png",
           type: "image/png",
-          media: "(max-width: 768px)",
+          media: "(max-width: 767px)",
         },
       ],
     },

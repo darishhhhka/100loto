@@ -4,6 +4,7 @@
   @include option(font-size, 55px, 34px);
   font-weight: $FW-BOLD;
   align-self: start;
+  z-index: 2;
 
   &_red {
     color: $RED;

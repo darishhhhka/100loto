@@ -6,7 +6,7 @@ import Picture from "@/components/baseComponents/gui/picture/Picture";
 import {baseConsumers} from "@PS/core";
 
 export default function Winner({className, name, prize, img, isPrev, isActive, isNext, srcVideo}) {
-  const itemProps = arguments[0].srcVideo;
+  const [firstName, lastName] = name.split(" ");
   return (
     <div
       className={classNames(
@@ -27,8 +27,13 @@ export default function Winner({className, name, prize, img, isPrev, isActive, i
         )}
         <Picture imgAttr={{...img, className: styles.winner__img}} />
       </div>
-      <span className={styles.winner__name}>{name}</span>
-      <span className={styles.winner__prize}>{prize}</span>
+      <div>
+        <p className={styles.winner__name}>
+          <span>{firstName}</span>
+          <span>{lastName}</span>
+        </p>
+        <span className={styles.winner__prize}>{prize}</span>
+      </div>
     </div>
   );
 }

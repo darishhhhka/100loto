@@ -15,8 +15,7 @@
   }
 
   position: relative;
-  @include sectionLayer(51px, 40px);
-  @include option(padding, 75px 140px 0px 140px, 47px 19px 0px 19px);
+  @include sectionLayer(51px, 33px, 78px 151px 0px, 44px 21px 0px);
   background:
     url("/public/images/bg-color-pattern.svg") no-repeat right/contain,
     linear-gradient(to bottom right, #fff8f1, #ffe2b6);
@@ -29,15 +28,11 @@
     @include option(width, 285);
     position: absolute;
     @include option(right, 159);
-    transform: translateY(-90%);
+    @include option(top, -118px);
 
     @include NOT-DESK {
       display: none;
     }
-  }
-
-  &__cosmonautImg {
-    width: 100%;
   }
 
   &__content {
@@ -46,8 +41,15 @@
     justify-content: center;
   }
 
+  &__title {
+    @include option(width, 744px, 373px, 744px);
+    line-height: 109%;
+  }
+
   &__info {
+    height: fit-content;
     @include option(margin-bottom, 62px, 18px);
+    @include option(margin-left, 53px, 0px);
   }
 
   &__cardList {
@@ -55,7 +57,7 @@
     grid-template-columns: repeat(2, 1fr);
     @include option(width, 457, 374);
     @include option(gap, 17, 14);
-    @include option(margin-bottom, 48, 38);
+    @include option(margin-bottom, 48px, 45px);
   }
 
   &__storeList {
@@ -72,6 +74,16 @@
     justify-content: center;
     z-index: 1;
     align-self: end;
-    @include option(width, 564, 387);
+    @include option(width, 564px, 415px);
+    @include option(margin-top, -40px, 0px);
+    @include option(margin-left, 64px, 0px);
+  }
+
+  &__store {
+    @include option(width, 186px, 164px);
+  }
+
+  &__bg {
+    @include positionBg;
   }
 }

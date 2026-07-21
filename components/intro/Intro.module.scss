@@ -15,7 +15,7 @@
   }
 
   &_paddingLeft {
-    @include option(padding-left, 13px);
+    @include option(padding-left, 13px, 0px);
   }
 
   position: relative;
@@ -24,11 +24,7 @@
   text-transform: uppercase;
 
   &__bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+    @include positionBg;
     overflow: hidden;
   }
 
@@ -39,18 +35,19 @@
     left: 0;
     bottom: 0;
     @include option(width, 800px, 414px, 1023px);
-    @include option(height, 800px, 477px);
+    //height: min-content;
+    @include option(height, 800px, 490px, 600px);
     background: linear-gradient(125deg, #ff3030, 75%, #ffb18f);
     @include NOT-DESK {
       margin-top: -100px;
-      clip-path: polygon(50% 0%, 100% 10%, 100% 100%, 0% 100%, 0% 10%);
+      clip-path: polygon(50% 6%, 100% 13%, 100% 100%, 0% 100%, 0% 13%);
     }
   }
 
   &__cosmos {
     position: absolute;
     right: 0;
-    @include option(bottom, 0px, 400px);
+    @include option(bottom, -0px, 400px);
     @include option(width, 640px, 414px, 1024px);
   }
 
@@ -61,18 +58,14 @@
   }
 
   &__men {
-    @include option(width, 482px, 284px);
+    @include option(width, 482px, 284px, 482px);
     @include option(heigth, 585px, 360px);
     position: absolute;
-    @include option(bottom, 0px, 400px);
+    @include option(bottom, 0px, 330px);
     @include option(left, 615px, -49px);
     @include DESKTOP {
       z-index: 10;
     }
-  }
-
-  &__imgMen {
-    width: 100%;
   }
 
   &__header {
@@ -83,7 +76,7 @@
     display: flex;
     justify-content: start;
     align-items: start;
-    @include option(padding, 152px 90px 166px 139px, 550px 18px 28px 35px);
+    @include option(padding, 152px 90px 166px 139px, 470px 18px 28px 35px, 700px 18px 28px 35px);
 
     @include TABLET {
       justify-content: center;
@@ -94,6 +87,7 @@
     z-index: 10;
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     @include NOT-MOB-2 {
       align-items: start;
@@ -108,9 +102,10 @@
 
   &__title {
     margin: 0;
-    @include option(padding-left, 14px);
+    @include option(margin-left, 14px, -20px);
     @include option(margin-bottom, 32px, 26px);
-    @include option(font-size, 67, 51);
+    @include option(font-size, 67px, 51px, 67px);
+    letter-spacing: 2%;
     font-weight: $FW-EXTRA_BOLD;
   }
 
@@ -125,7 +120,7 @@
     display: flex;
     flex-direction: column;
     @include option(gap, 2px);
-    @include option(font-size, 43, 25);
+    @include option(font-size, 43px, 25px, 43px);
     font-weight: $FW-EXTRA_BOLD;
     position: relative;
   }
@@ -136,6 +131,7 @@
   }
 
   &__btn {
+    //@include option(width, 284px, 319px);
     @include option(margin-bottom, 20px);
 
     @include MOBILE {
@@ -152,9 +148,9 @@
       width: max-content;
       background-color: $WHITE;
       color: #e3010f;
-      @include option(font-size, 58, 32);
+      @include option(font-size, 58px, 32px, 58px);
       border-radius: 7px;
-      @include option(padding, 0px 14px);
+      @include option(padding, 0px 7px);
     }
 
     &_bg-m {
@@ -162,9 +158,9 @@
         width: max-content;
         background-color: $WHITE;
         color: #e3010f;
-        @include option(font-size, 58, 32);
+        @include option(font-size, 58px, 32px, 58px);
         border-radius: 7px;
-        @include option(padding, 0px 14px);
+        @include option(padding, 0px 7px);
       }
     }
 
@@ -176,13 +172,12 @@
       }
 
       @include NOT-MOB {
-        @include option(font-size, 51);
+        @include option(line-hight, 63px);
+        @include option(font-size, 51px);
         width: max-content;
         z-index: 100;
         position: absolute;
         background-color: $RED;
-        font-size: 51px;
-        padding: 8px;
         border-radius: 7px;
         bottom: 5%;
         left: 50%;

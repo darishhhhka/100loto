@@ -6,8 +6,8 @@ import Title from "@/components/title/Title";
 import {about} from "@/constants/copyright";
 import Picture from "@/components/baseComponents/gui/picture/Picture";
 import {motion} from "framer-motion";
-import PE from "@/components/baseComponents/gui/pElement/PElement";
-import {settingsAnimationWhileInView} from "@/components/baseComponents/helpers/transition/animations";
+import {MouseParallax} from "react-just-parallax";
+import CustomButton from "@/components/customButton/CustomButton";
 
 export default function About({className, children}) {
   const svgSetting = [
@@ -16,7 +16,7 @@ export default function About({className, children}) {
       d: "M19 121.001C111 -8.99953 615 -85.9995 594 290C595 363 564.525 497.063 467 443C191 290 41.3336 378.667 1.00004 492C-93 758 178 992.001 585 709.001",
     },
     {
-      viewBox: "0 0 600 200",
+      viewBox: "0 0 600 190",
       d: "M36 -156.999C128 -287 632 -364 611 12.0004C612 85.0004 581.525 219.063 484 165C208 12.0004 58.3336 100.667 18 214C-76 480 195 714.001 602 431.001",
     },
     {
@@ -26,12 +26,20 @@ export default function About({className, children}) {
   ];
 
   return (
-    <section className={classNames(styles.about, className)}>
-      <div className={styles.about__bg}></div>
-      <div className={styles.about__wrap}>
-        <div className={styles.about__sputnik}>
-          <Picture imgAttr={{...about.img, className: styles.about__sputnikImg}} />
+    <section id="steps" className={classNames(styles.about, className)}>
+      <div className={styles.about__bg}>
+        <div className={classNames(styles.about__sputnik, styles.about__bgItem)}>
+          <MouseParallax strength={-0.03}>
+            <Picture imgAttr={about.imgSputnik} />
+          </MouseParallax>
         </div>
+        <div className={classNames(styles.about__ring, styles.about__bgItem)}>
+          <MouseParallax strength={-0.02}>
+            <Picture imgAttr={about.imgRing} />
+          </MouseParallax>
+        </div>
+      </div>
+      <div className={styles.about__wrap}>
         <Title color="red">{about.title}</Title>
         <div className={styles.about__list}>
           {about.steps.map((step, indexStep) => (
@@ -57,7 +65,6 @@ export default function About({className, children}) {
                   transition={{duration: 1.2, delay: indexStep * 1.5}}
                   viewport={{once: true}}
                 >
-                  {/*<div className={styles.about__svgMask}></div>*/}
                   <svg
                     className={styles.about__line}
                     viewBox={svgSetting[indexStep].viewBox}
@@ -120,12 +127,14 @@ export default function About({className, children}) {
                       initial={{scale: 0}}
                       whileInView={{scale: 1}}
                       transition={{duration: 1, delay: indexStep}}
+                      viewport={{once: true}}
                     >
                       <Picture
                         key={`step-img-${index}`}
                         attr={{className: styles.about__img}}
                         imgAttr={image.img}
                         sourceData={image.sourceData}
+                        viewport={{once: true}}
                       />
                     </motion.div>
                   ))}
@@ -134,6 +143,9 @@ export default function About({className, children}) {
             </div>
           ))}
         </div>
+        <CustomButton className={styles.about__btn} href={about.button.href}>
+          {about.button.text}
+        </CustomButton>
       </div>
     </section>
   );

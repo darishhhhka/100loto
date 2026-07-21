@@ -55,9 +55,12 @@
   }
 
   &__name {
+    display: flex;
+    flex-direction: column;
     color: $BLACK;
     font-weight: $FW-SEMI_BOLD;
     @include option(font-size, 21, 22);
+    @include option(margin-bottom, 10px);
   }
 
   &__prize {
