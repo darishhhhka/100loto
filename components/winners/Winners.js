@@ -20,15 +20,17 @@ export default function Winners({className, children}) {
     slidesPerView: "1",
     loop: true,
     coverflowEffect: {
+      scale: 0.7,
       rotate: 0,
       stretch: 150,
-      depth: 300,
+      depth: 0,
       modifier: 1,
       slideShadows: false,
     },
     breakpoints: {
       768: {
         coverflowEffect: {
+          scale: 0.6,
           rotate: 0,
           stretch: 90,
           depth: 200,
@@ -78,7 +80,7 @@ export default function Winners({className, children}) {
             <div id="swiper-right" className={classNames(styles.winners__arrow, styles.winners__arrow_right)}>
               <Picture imgAttr={{...winners.arrowIcon, className: styles.winners__arrowImg}} />
             </div>
-            <CustomButton>{winners.button.text}</CustomButton>
+            <CustomButton className={styles.winners__btn}>{winners.button.text}</CustomButton>
           </div>
         </div>
       </div>

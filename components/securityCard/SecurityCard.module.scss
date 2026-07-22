@@ -22,7 +22,7 @@
   @include option(font-size, 13px, 15px);
   @include option(width, 270, 319);
   @include option(height, 238, 350);
-  @include option(padding, 19px 17px, 31px 19px 39px);
+  @include option(padding, 19px 17px 15px 17px, 26px 19px 39px);
   position: relative;
   background: $WHITE;
   text-align: left;
@@ -37,15 +37,53 @@
   }
 
   &__header {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
+  &__img {
+    position: absolute;
+    @include mod("0") {
+      @include option(top, -10px);
+      @include option(right, -10px);
+    }
+
+    @include mod("1") {
+      @include option(width, 28px, 56px);
+      @include option(top, -10px, -15px);
+      @include option(right, -9px, 2px);
+    }
+    @include mod("2") {
+      @include option(top, -8px);
+      @include option(right, -3px);
+    }
+    @include mod("3") {
+      position: absolute;
+      flex-shrink: 0;
+      @include option(right, -10px);
+    }
+  }
+
   &__title {
+    white-space: pre-wrap;
     @include option(font-size, 13px, 17px);
+    @include option(line-height, 18px, 18px);
+    @include option(letter-spacing, 0.4px, 1px);
     text-transform: uppercase;
     font-weight: $FW-BOLD;
+
+    @include mod("1") {
+      @include option(padding-top, 6px);
+      @include DESKTOP {
+        white-space: nowrap;
+      }
+    }
+
+    @include mod("3") {
+      @include option(letter-spacing, 1px, 1px);
+    }
   }
 
   &__description {
@@ -54,11 +92,24 @@
 
   &__children {
     display: flex;
-    @include option(gap, 21);
+    @include option(gap, 21px, 35px);
+    //@include option(margin-bottom, 0px);
     margin-top: auto;
+    @include option(padding, 10px 3px 0px 0px, 12px 14px);
   }
 
   &__paySistem {
-    @include option(height, 12px, 21px);
+    align-self: end;
+    &_0 {
+      @include option(width, 40px, 67px);
+    }
+
+    &_1 {
+      @include option(width, 23px, 39px);
+    }
+
+    &_2 {
+      @include option(width, 47px, 78px);
+    }
   }
 }

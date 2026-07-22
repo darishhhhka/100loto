@@ -2,7 +2,7 @@
 
 .intro {
   @mixin mod($mod) {
-    @include modifier("triangle", $mod) {
+    @include modifier("intro", $mod) {
       @content;
     }
   }
@@ -15,7 +15,8 @@
   }
 
   &_paddingLeft {
-    @include option(padding-left, 13px, 0px);
+    @include option(padding-left, 13px, 2px);
+    @include option(padding-right, 13px, 2px);
   }
 
   position: relative;
@@ -40,15 +41,23 @@
     background: linear-gradient(125deg, #ff3030, 75%, #ffb18f);
     @include NOT-DESK {
       margin-top: -100px;
-      clip-path: polygon(50% 6%, 100% 13%, 100% 100%, 0% 100%, 0% 13%);
+      clip-path: polygon(50% 4.5%, 100% 10%, 100% 100%, 0% 100%, 0% 10%);
     }
   }
 
   &__cosmos {
     position: absolute;
     right: 0;
-    @include option(bottom, -0px, 400px);
-    @include option(width, 640px, 414px, 1024px);
+    top: 0;
+    //@include option(bottom, -0px, 400px);
+    //@include option(width, 640px, 414px, 1024px);
+  }
+
+  &__car {
+    position: absolute;
+    @include option(width, 639px, 350px);
+    @include option(bottom, 0px, 448px);
+    @include option(right, 0px, -7px);
   }
 
   &__imgCosmos {
@@ -57,11 +66,17 @@
     height: 100%;
   }
 
+  &__rocket {
+    position: absolute;
+    @include option(right, -12px, -8px);
+    @include option(top, 9px, 7px);
+  }
+
   &__men {
     @include option(width, 482px, 284px, 482px);
     @include option(heigth, 585px, 360px);
     position: absolute;
-    @include option(bottom, 0px, 330px);
+    @include option(bottom, 0px, 340px);
     @include option(left, 615px, -49px);
     @include DESKTOP {
       z-index: 10;
@@ -75,12 +90,12 @@
   &__content {
     display: flex;
     justify-content: start;
-    align-items: start;
-    @include option(padding, 152px 90px 166px 139px, 470px 18px 28px 35px, 700px 18px 28px 35px);
+    align-items: center;
+    @include option(padding, 152px 90px 172px 139px, 470px 18px 30px 35px, 700px 18px 28px 35px);
 
-    @include TABLET {
-      justify-content: center;
-    }
+    //@include TABLET {
+    //  //justify-content: center;
+    //}
   }
 
   &__info {
@@ -103,17 +118,17 @@
   &__title {
     margin: 0;
     @include option(margin-left, 14px, -20px);
-    @include option(margin-bottom, 32px, 26px);
+    @include option(margin-bottom, 27px, 23px);
     @include option(font-size, 67px, 51px, 67px);
-    letter-spacing: 2%;
+    letter-spacing: 1%;
     font-weight: $FW-EXTRA_BOLD;
   }
 
   &__prizes {
     display: flex;
     flex-direction: column;
-    @include option(gap, 12px);
-    @include option(margin-bottom, 41px, 15px);
+    @include option(gap, 12px, 14px);
+    @include option(margin-bottom, 41px, 17px);
   }
 
   &__priz {
@@ -121,26 +136,49 @@
     flex-direction: column;
     @include option(gap, 2px);
     @include option(font-size, 43px, 25px, 43px);
+    //@include option(line-height, 57px, 35px);
+    @include option(letter-spacing, -1px, 1px);
+    //letter-spacing: 2%;
+    white-space: nowrap;
     font-weight: $FW-EXTRA_BOLD;
     position: relative;
+
+    &.intro__text_pos_abs {
+      letter-spacing: 1%;
+    }
+  }
+
+  &__posTriangle {
+    display: flex;
+    @include option(gap, 12px);
+    align-items: center;
   }
 
   &__triangle {
     position: absolute;
-    transform: translate(-150%, 8%);
+    @include option(left, -36px, -20px);
+    //top: 50%;
+    //transform: translateY(-50%);
+    //@include option(top, 10px);
+    //transform: translate(-150%, 26%);
   }
 
   &__btn {
-    //@include option(width, 284px, 319px);
-    @include option(margin-bottom, 20px);
+    position: relative;
+    @include option(width, 284px, 319px);
+    @include option(height, 67px, 75px);
+    @include option(margin-bottom, 18px);
+    @include option(left, 0px, -12px);
+    letter-spacing: 7%;
 
-    @include MOBILE {
-      width: 100%;
-    }
+    //@include MOBILE {
+    //  width: 100%;
+    //}
   }
 
-  &__btnLink {
-    text-decoration: none;
+  &__ntv {
+    position: relative;
+    @include option(left, 0px, -12px);
   }
 
   &__text {
@@ -150,10 +188,12 @@
       color: #e3010f;
       @include option(font-size, 58px, 32px, 58px);
       border-radius: 7px;
-      @include option(padding, 0px 7px);
+      @include option(padding, 0px 11px, 0px 7px);
+      letter-spacing: 3%;
     }
 
     &_bg-m {
+      letter-spacing: 2%;
       @include NOT-DESK {
         width: max-content;
         background-color: $WHITE;
@@ -162,6 +202,10 @@
         border-radius: 7px;
         @include option(padding, 0px 7px);
       }
+    }
+
+    &_ls {
+      @include option(letter-spacing, -0.5px, 0.4px);
     }
 
     &_pos_abs {
@@ -174,14 +218,15 @@
       @include NOT-MOB {
         @include option(line-hight, 63px);
         @include option(font-size, 51px);
+        @include option(padding, 2px 0px);
         width: max-content;
         z-index: 100;
         position: absolute;
         background-color: $RED;
         border-radius: 7px;
-        bottom: 5%;
+        bottom: 6%;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translateX(-47%);
       }
     }
   }

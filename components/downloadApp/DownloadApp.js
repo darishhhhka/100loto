@@ -5,9 +5,7 @@ import styles from "./DownloadApp.module.scss";
 import {downloadApp} from "@/constants/copyright";
 import DownloadAppCard from "@/components/downloadAppCard/DownloadAppCard";
 import Title from "@/components/title/Title";
-import DownloadStoreCard from "@/components/downloadStoreCard/DownloadStoreCard";
 import Picture from "@/components/baseComponents/gui/picture/Picture";
-import {picture} from "framer-motion/m";
 import {MouseParallax} from "react-just-parallax";
 
 export default function DownloadApp({className, children}) {

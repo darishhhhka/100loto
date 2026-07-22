@@ -13,9 +13,20 @@
       }
     }
   }
+
   position: relative;
-  @include sectionLayer(47px, 40px, 77px 149px 90px, 47px 17px 59px 24px);
+  @include sectionLayer(43px, 40px, 77px 149px 90px, 44px 17px 59px 20px);
   background: linear-gradient(to right, #ff684a, #ff3030);
+
+  --value: 40;
+
+  &_1 {
+    --value: 42;
+  }
+
+  @include mod("1") {
+    --value: 41;
+  }
 
   &__bg {
     //overflow: hidden;
@@ -24,6 +35,16 @@
     left: 0;
     bottom: 0;
     right: 0;
+
+    content: var(--value);
+    //
+    //&_1{
+    //  --value: 67;
+    //}
+    //
+    @include mod("1") {
+      --value: 43;
+    }
   }
 
   &__patternImg {
@@ -35,14 +56,19 @@
     height: 100%;
   }
 
+  &__title {
+    @include option(letter-spacing, 0px, -0.4px);
+  }
   &__list {
-    @include option(padding, 0px 0px 0px 0px, 0px 0px);
+    @include option(width, 1048px, 414px, 800px);
+    @include option(padding-left, 0px, 12px);
+    @include option(margin-top, -4px, 0px);
     @include option(margin-bottom, 65px, 16px);
     display: grid;
     justify-content: space-between;
     align-items: center;
     grid-template-columns: repeat(4, auto);
-    @include option(gap, 50px, 25px);
+    @include option(gap, 0px, 25px);
 
     @include TABLET {
       grid-template-columns: repeat(2, auto);
@@ -60,11 +86,19 @@
           transform: translateX(5% * $i);
         }
       }
+
+      &_1 {
+        position: relative;
+        @include option(left, -10px, 0px);
+      }
     }
   }
 
   &__btn {
+    @include option(width, 287px, 280px);
+    @include option(height, 68px);
     align-self: center;
+    @include option(margin-top, -6px);
   }
 
   &__btnLink {

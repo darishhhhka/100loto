@@ -42,7 +42,7 @@ export default function Security({className, children}) {
         </div>
         <div className={classNames(styles.security__list, styles.security__list_desktop)}>
           {security.card.map((card, index) => (
-            <SecurityCard key={`security-card-${index}`} {...card} />
+            <SecurityCard key={`security-card-${index}`} index={index} {...card} />
           ))}
         </div>
 

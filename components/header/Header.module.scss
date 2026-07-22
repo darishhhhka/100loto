@@ -29,7 +29,11 @@
   }
 
   &__img {
+    position: relative;
     @include option(width, 228, 221);
+    @include option(top, -13px, -7px);
+    @include option(left, 6px, -7px);
+    //transform: translate(4%, -24%);
   }
 
   //@mixin mod($mod) {

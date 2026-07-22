@@ -21,7 +21,7 @@
 
   &__wrap {
     position: relative;
-    @include sectionLayer(67px, 38px, 76px 148px 0 148px, 44px 19px 0px);
+    @include sectionLayer(63px, 54px, 76px 148px 0 148px, 44px 19px 0px);
   }
 
   &__bg {
@@ -34,14 +34,25 @@
   }
 
   &__header {
+    white-space: nowrap;
     align-self: start;
     display: flex;
     flex-direction: column;
-    @include option(gap, 8px);
+    @include option(gap, 6px, 3px);
   }
 
   &__link {
+    position: relative;
     @include option(font-size, 17, 15);
+    @include option(letter-spacing, 0.3px);
+    display: flex;
+    align-items: center;
+    @include option(gap, 14px, 4px);
+
+    &::after {
+      content: url("/images/winners/arrowLink.svg");
+      @include option(height, 12px);
+    }
   }
 
   &__content {
@@ -74,8 +85,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    @include option(gap, 28px, 29px);
-    @include option(padding-bottom, 65);
+    @include option(gap, 39px, 48px);
+    @include option(padding-bottom, 64px);
     @include option(width, 600px, 372px);
     --carousel-overflow: visible;
     --carousel-swiper-overflow: visible;
@@ -95,14 +106,14 @@
     z-index: 4;
     @include option(width, 60, 52, 60);
     position: absolute;
-    @include option(top, 109px, 90px);
+    @include option(top, 108px, 90px);
     cursor: pointer;
 
     &_left {
-      @include option(left, -63px, 0px, -82px);
+      @include option(left, -60px, 0px, -82px);
     }
     &_right {
-      @include option(right, -63px, 0px, -82px);
+      @include option(right, -60px, 0px, -82px);
       transform: rotate(-180deg);
     }
   }
@@ -111,7 +122,9 @@
     width: 100%;
   }
 
-  &__btnLink {
-    text-decoration: none;
+  &__btn {
+    @include option(width, 287px, 280px);
+    @include option(height, 68px);
+    @include option(letter-spacing, 1.5px, 0px);
   }
 }

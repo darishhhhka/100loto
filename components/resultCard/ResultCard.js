@@ -4,9 +4,9 @@ import classNames from "classnames";
 import styles from "./ResultCard.module.scss";
 import Picture from "@/components/baseComponents/gui/picture/Picture";
 
-export default function ResultCard({className, title, image, subtitle, subtitleBold, left}) {
+export default function ResultCard({className, title, image, subtitle, subtitleBold, left, index}) {
   return (
-    <div className={classNames(styles.resultCard, className)}>
+    <div className={classNames(styles.resultCard, styles[`resultCard_${index}`], className)}>
       <div className={styles.resultCard__imgWrap}>
         <Picture {...image} />
       </div>
@@ -16,7 +16,7 @@ export default function ResultCard({className, title, image, subtitle, subtitleB
           {title.number && title.number}{" "}
           {title.text && <span className={styles.resultCard__title_sm}>{title.text}</span>}
         </h5>
-        <p classNmae={styles.resultCard__subtitle}>
+        <p className={styles.resultCard__subtitle}>
           {subtitle}
           {subtitleBold && <span className={styles.resultCard__subtitle_bold}>{subtitleBold}</span>}
         </p>

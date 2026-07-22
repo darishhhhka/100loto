@@ -16,10 +16,11 @@
 
   @include option(width, 220px, 179px);
   @include option(height, 190px, 154px);
-  @include option(padding, 28px 31px, 16px 23px);
+  @include option(padding, 28px 0px 28px 31px, 16px 23px);
   background-color: #f4f6ff;
   border-radius: 8px;
   box-shadow: 4px 4px 8px 0 #e5a27c66;
+  white-space: pre-wrap;
 
   &__img {
     @include option(margin-bottom, 13px, 13px);

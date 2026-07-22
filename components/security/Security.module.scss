@@ -13,11 +13,13 @@
       }
     }
   }
-  @include sectionLayer(56px, 42px, 78px 150px 150px, 42px 17px 65px);
+  @include sectionLayer(63px, 42px, 78px 150px 150px, 42px 17px 65px);
   background: linear-gradient(to bottom right, #6a0c0c, #320101);
 
   &__title {
     @include option(width, 945, 377, 945);
+    @include option(line-height, 60px, 40px);
+    @include option(letter-spacing, 0px, -0.3px);
   }
 
   &__content {
@@ -25,7 +27,7 @@
     display: flex;
     justify-content: center;
 
-    @include option(gap, 20);
+    @include option(gap, 23px, 22px);
 
     @include NOT-DESK {
       flex-direction: column;
@@ -69,10 +71,15 @@
   }
 
   &__btn {
+    @include option(width, 287px, 280px);
+    @include option(height, 68px);
+    @include option(font-size, 20px);
+    @include option(letter-spacing, 1px, 1px);
+    @include option(margin-top, 0px, -8px);
     @include DESKTOP {
       position: absolute;
       @include option(left, 656px);
-      @include option(top, 293px);
+      @include option(top, 297px);
     }
     //transform: translateX(50%);
   }

@@ -4,22 +4,23 @@
   position: relative;
   @include option(padding, 80px 207px 84px 207px, 15px 33px 39px 21px);
   display: flex;
-  @include option(gap, 86px, 43px);
+  @include option(gap, 95px, 38px);
   background-color: #0f1114;
   font-family: "Roboto", sans-serif;
   width: 100vw;
+  white-space: pre-wrap;
 
   @include MOBILE {
     flex-direction: column;
   }
 
   &__leftColumn {
-    @include option(width, 610px, 363px, 610px);
+    @include option(width, 605px, 363px, 610px);
   }
 
   &__logo {
     @include option(margin-top, 12px);
-    @include option(margin-bottom, 27px, 9px);
+    @include option(margin-bottom, 30px, 9px);
     @include option(width, 140px);
   }
 
@@ -39,7 +40,7 @@
   &__line {
     height: 0.5px;
     background-color: #f3f6f8;
-    @include option(margin-bottom, 30px, 40px);
+    @include option(margin-bottom, 34px, 40px);
   }
 
   &__mediaList {
@@ -51,7 +52,7 @@
     @include option(width, 330px);
     display: flex;
     flex-direction: column;
-    @include option(gap, 20px, 18px);
+    @include option(gap, 20px);
   }
 
   &__associationsText {
@@ -61,7 +62,7 @@
   &__parntersImgWrap {
     display: flex;
     flex-direction: row;
-    @include option(gap, 31px, 11px);
+    @include option(gap, 29px, 11px);
   }
 
   &__parntersImg {
@@ -71,22 +72,27 @@
 
   &__textWhite {
     @include option(font-size, 14px, 12px);
+    @include option(line-height, 15px);
     color: $WHITE;
 
     &_sm {
       @include option(font-size, 10px);
       @include option(line-height, 15px);
-      @include option(margin-bottom, 18px, 12px);
+      @include option(margin-bottom, 17px, 17px);
     }
   }
 
   &__partnersBlock {
     display: flex;
     flex-direction: column;
-    @include option(gap, 13px, 18);
+    @include option(gap, 8px, 18);
     @include MOBILE {
       flex-direction: row;
       align-items: start;
+    }
+
+    &_smGap {
+      @include option(gap, 22px, 18);
     }
   }
 
@@ -98,6 +104,6 @@
   &__note {
     display: flex;
     flex-direction: column;
-    @include option(gap, 9px);
+    @include option(gap, 3px);
   }
 }

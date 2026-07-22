@@ -17,7 +17,7 @@ export default function MoreWinners({className, children}) {
     stars.push(
       <div className={classNames(styles.moreWinners__bgItem, styles[`moreWinners__item_${i}`])}>
         <MouseParallax strength={-0.01 * i}>
-          <Picture imgAttr={{...moreWinners.star.imgAttr, className: styles.moreWinners__img}} />
+          <Picture imgAttr={moreWinners.star.imgAttr} />
         </MouseParallax>
       </div>,
     );

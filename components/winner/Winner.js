@@ -22,7 +22,9 @@ export default function Winner({className, name, prize, img, isPrev, isActive, i
         {isActive && (
           <div className={styles.winner__play}>
             <Picture imgAttr={{src: "/images/winners/play.svg", className: styles.winner__playImg}} />
-            <a href="">Смотреть интервью</a>
+            <a className={styles.winner__playLink} href="">
+              Смотреть интервью
+            </a>
           </div>
         )}
         <Picture imgAttr={{...img, className: styles.winner__img}} />

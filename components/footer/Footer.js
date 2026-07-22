@@ -39,7 +39,7 @@ export default function Footer() {
           </div>
           <p className={styles.footer__textWhite}>{footer.partners.organizators}</p>
         </div>
-        <div className={styles.footer__partnersBlock}>
+        <div className={classNames(styles.footer__partnersBlock, styles.footer__partnersBlock_smGap)}>
           <div className={styles.footer__associationsImg}>
             <Picture imgAttr={footer.partners.logoAssociations} />
           </div>

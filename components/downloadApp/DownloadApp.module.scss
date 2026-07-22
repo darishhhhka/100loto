@@ -37,8 +37,11 @@
 
   &__content {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
+    @include MOBILE {
+      flex-wrap: wrap;
+    }
   }
 
   &__title {
@@ -49,23 +52,23 @@
   &__info {
     height: fit-content;
     @include option(margin-bottom, 62px, 18px);
-    @include option(margin-left, 53px, 0px);
+    @include option(margin-left, 68px, 0px);
   }
 
   &__cardList {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     @include option(width, 457, 374);
-    @include option(gap, 17, 14);
-    @include option(margin-bottom, 48px, 45px);
+    @include option(gap, 18, 14);
+    @include option(margin-bottom, 49px, 45px);
   }
 
   &__storeList {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     flex-wrap: wrap;
-    @include option(row-gap, 12, 13);
-    @include option(column-gap, 15);
+    @include option(row-gap, 12px, 10px);
+    @include option(column-gap, 15px, 17px);
     width: min-content;
   }
 
@@ -75,8 +78,8 @@
     z-index: 1;
     align-self: end;
     @include option(width, 564px, 415px);
-    @include option(margin-top, -40px, 0px);
-    @include option(margin-left, 64px, 0px);
+    @include option(margin-top, -46px, -10px);
+    @include option(margin-left, 69px, 0px);
   }
 
   &__store {

@@ -19,7 +19,7 @@
   align-items: center;
   @include option(gap, 15px, 0px);
   text-align: center;
-  @include option(width, 220px, 390px);
+  @include option(width, 230px, 390px);
   @include MOBILE {
     flex-direction: row;
   }
@@ -30,15 +30,25 @@
       text-align: left;
       margin-left: 15px;
     }
+
+    @include mod("3") {
+      position: relative;
+      @include option(top, 8px, -10px);
+    }
+
+    @include mod("0") {
+      position: relative;
+      @include option(left, 0px, -14px);
+    }
   }
 
   &__title {
-    width: max-content;
     color: #ffcd17;
     @include option(font-size, 48px);
     line-height: 91%;
     font-weight: $FW-EXTRA_BOLD;
-    @include option(margin-bottom, 10px, 0);
+    @include option(margin-bottom, 7px, 0);
+    @include option(line-height, 48px);
 
     @include MOBILE {
       width: min-content;
@@ -46,6 +56,9 @@
 
     &_sm {
       @include option(font-size, 48px, 30px);
+      @include mod("3") {
+        @include option(font-size, 40px, 45px);
+      }
     }
 
     &_left {
@@ -58,7 +71,7 @@
   }
 
   &__subtitle {
-    @include option(font-size, 18, 17);
+    @include option(font-size, 18px, 17px);
 
     &_bold {
       display: block;
@@ -77,5 +90,16 @@
     flex-shrink: 0;
     @include option(height, 231px, 156px);
     @include option(width, 231px, 162px);
+
+    @include mod("3") {
+      position: relative;
+      @include option(top, 12px, 0px);
+    }
+
+    @include mod("0") {
+      position: relative;
+      @include option(left, 0px, -6px);
+      @include option(width, 231px, 180px);
+    }
   }
 }

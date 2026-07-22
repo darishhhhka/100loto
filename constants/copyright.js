@@ -58,6 +58,7 @@ export const intro = {
       priz: [
         {
           text: "призы по 300 000 ₽",
+          style: "intro__text_ls",
         },
       ],
     },
@@ -96,6 +97,7 @@ export const intro = {
       src: "/images/intro/men.png",
       alt: "men",
     },
+
     sourceData: {
       sources: [
         {
@@ -108,13 +110,22 @@ export const intro = {
   },
   imgCosmos: {
     img: {
-      src: "/images/intro/intro-bg.png",
+      src: "/images/intro/cosmos.png",
       alt: "intro cosmos",
     },
   },
 
+  imgRocket: {
+    img: {
+      src: "/images/intro/rocket.png",
+    },
+  },
+
   imgCar: {
-    img: {},
+    img: {
+      src: "/images/intro/car.png",
+      alt: "car",
+    },
   },
 
   imgPattern: {
@@ -458,7 +469,7 @@ export const security = {
   title: "Покупайте билеты лотереи онлайн — это безопасно",
   card: [
     {
-      title: "безопасная регистрация",
+      title: "безопасная \nрегистрация",
       icon: {
         src: "/images/security/securityCard1.svg",
         alt: "security",
@@ -467,7 +478,7 @@ export const security = {
         "При регистрации вы указываете только свой электронный адрес и номер телефона. На этот номер мы будем отправлять вам sms с паролем для получения выигрышей на сайте. ",
     },
     {
-      title: "безопасность данных",
+      title: "безопасность \nданных",
       icon: {
         src: "/images/security/securityCard2.svg",
         alt: "security",
@@ -490,7 +501,7 @@ export const security = {
       ],
     },
     {
-      title: "Государственные лотереи",
+      title: "Государственные \nлотереи",
       icon: {
         src: "/images/security/securityCard3.svg",
         alt: "security",
@@ -499,7 +510,7 @@ export const security = {
         "Организаторами всех лотерей в России являются Министерство спорта и Министерство финансов. Они следят за тем, чтобы все розыгрыши проводились честно, а победители вовремя  получали выигрыши.",
     },
     {
-      title: "Ваш билет никогда не потеряется",
+      title: "Ваш билет никогда \nне потеряется",
       icon: {
         src: "/images/security/securityCard4.svg  ",
         alt: "security",
@@ -525,28 +536,28 @@ export const downloadApp = {
         src: "/images/downloadApp/downloadAppCard1.png",
         alt: "download",
       },
-      description: "Удобная и безопасная оплата",
+      description: "Удобная\nи безопасная\nоплата",
     },
     {
       icon: {
         src: "/images/downloadApp/downloadAppCard2.png",
         alt: "download",
       },
-      description: "Быстрый вывод денег на карту",
+      description: "Быстрый\nвывод денег\nна карту",
     },
     {
       icon: {
         src: "/images/downloadApp/downloadAppCard3.png",
         alt: "download",
       },
-      description: "Лотереи всегда под рукой",
+      description: "Лотереи всегда\nпод рукой",
     },
     {
       icon: {
         src: "/images/downloadApp/downloadAppCard4.png",
         alt: "download",
       },
-      description: "Push-уведомления о выигрышах",
+      description: "Push-уведомления\nо выигрышах",
     },
   ],
   storeList: [
@@ -660,7 +671,7 @@ export const footer = {
     alt: "logo",
   },
   copyright: [
-    "Изображение автомобиля может отличаться от разыгрываемого приза в тираже «Русского лото» № 1435.  Денежный эквивалент автомобиля – 4 990 000 рублей.",
+    "Изображение автомобиля может отличаться от разыгрываемого приза в тираже «Русского лото» № 1435. Денежный эквивалент автомобиля – 4 990 000 рублей.",
     "Фраза «Джекпот 800 000 000 ₽» указывает на минимальный гарантированный размер средств призового фонда в категории «Джекпот».",
     "Победитель премии «Марка № 1» в России в 2021 году в категории «лотереи».",
     "Фраза «Победителей будет больше!» означает, что розыгрыш будет вестись до 87-го хода включительно и в таком тираже победителей будет больше, чем в тиражах, в которых розыгрыш ведётся до 86-го хода включительно.",

@@ -18,7 +18,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  @include option(gap, 14);
+  @include option(gap, 12px);
   opacity: 0;
 
   &_active {
@@ -28,6 +28,8 @@
   &_prev,
   &_next {
     opacity: 0.2;
+    position: relative;
+    @include option(top, -18px);
   }
 
   &__imgWrap {
@@ -36,6 +38,7 @@
   }
 
   &__play {
+    @include option(padding-top, 26px);
     position: absolute;
     top: 0;
     left: 0;
@@ -50,6 +53,10 @@
     color: white;
   }
 
+  &__playLink {
+    @include option(margin-top, 4px);
+  }
+
   &__playImg {
     @include option(width, 92px, 80px);
   }
@@ -60,21 +67,29 @@
     color: $BLACK;
     font-weight: $FW-SEMI_BOLD;
     @include option(font-size, 21, 22);
-    @include option(margin-bottom, 10px);
+    @include option(margin-bottom, 8px);
   }
 
   &__prize {
+    position: relative;
+    width: 100%;
     @include option(font-size, 26, 23);
     color: #ea1d42;
     font-weight: $FW-BOLD;
     display: flex;
     align-items: center;
+    //justify-content: center;
     @include option(gap, 9);
+    @include option(margin-top, -2px);
 
     &::before {
       content: url("/images/winners/cup.png");
+      position: absolute;
+      @include option(left, -30px);
+      top: 50%;
+      transform: translateY(-50%);
       display: inline-block;
-      @include option(width, 31, 37);
+      @include option(width, 31px, 27px);
     }
   }
 

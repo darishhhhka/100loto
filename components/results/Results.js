@@ -23,7 +23,7 @@ export default function Results({className, children}) {
   }
 
   return (
-    <section id="about" className={classNames(styles.results, className)}>
+    <section id="about" className={classNames(styles.results, styles.results_1, className)}>
       <div className={styles.results__bg}>
         <div className={styles.results__patternImg}>
           <Picture imgAttr={results.imgPattern.img} />
@@ -36,12 +36,15 @@ export default function Results({className, children}) {
 
         {stars}
       </div>
-      <Title color="white">{results.title}</Title>
+      <Title className={styles.results__title} color="white">
+        {results.title}
+      </Title>
       <div className={styles.results__list}>
         {results.list.map((res, index) => (
           <ResultCard
             className={styles[`results__card_right_${index}`]}
             key={`result-card-${index}`}
+            index={index}
             {...res}
             // img={res.image}
             // title={res.title}

@@ -18,16 +18,18 @@
   //font-weight: $FW-SEMI_BOLD;
   display: flex;
   align-items: center;
-  @include option(gap, 16, 12);
+  @include option(gap, 15px, 12);
   @include option(width, 344px, 321px);
   color: $WHITE;
 
   &__img {
-    @include option(width, 46px, 42px);
+    @include option(width, 43px, 42px);
     @include option(height, 46px, 42px);
   }
 
   &__text {
     @include option(width, 280px);
+    letter-spacing: 2%;
+    @include option(line-height, 18px);
   }
 }

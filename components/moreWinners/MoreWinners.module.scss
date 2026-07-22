@@ -14,22 +14,15 @@
     }
   }
   position: relative;
-  @include sectionLayer(0px, 0px, 92px 153px, 42px 19px 57px);
+  @include sectionLayer(0px, 0px, 90px 150px 99px, 45px 19px 57px);
 
   &__bg {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    @include positionBg;
   }
 
   &__cosmosBg {
     @include positionBg;
-  }
-
-  &__cosmosImg {
-    height: 100%;
+    @include option(left, -10px, 0px);
   }
 
   &__wrap {
@@ -42,7 +35,7 @@
   &__title {
     @include option(font-size, 65, 34);
     @include option(width, 535, 379, 535);
-    @include option(margin-bottom, 280px, 0px, 301px);
+    @include option(margin-bottom, 305px, 0px, 301px);
   }
 
   &__content {
@@ -64,7 +57,10 @@
   }
 
   &__btn {
-    @include option(margin-bottom, 22px, 0px, 22px);
+    @include option(width, 287px);
+    @include option(height, 68px);
+    @include option(margin-bottom, 25px, 0px, 22px);
+    @include option(letter-spacing, 1px, 0px);
     @include MOBILE {
       align-self: center;
     }
@@ -72,10 +68,6 @@
 
   &__btnLink {
     text-decoration: none;
-  }
-
-  &__img {
-    width: 100%;
   }
 
   &__bgItem {
@@ -93,32 +85,32 @@
   &__hatCosmonaut {
     @include option(width, 245px);
     @include option(right, 120px);
-    @include option(bottom, -64px);
+    @include option(bottom, -69px);
     animation: none;
   }
 
   &__item_0 {
-    @include option(width, 29px);
-    @include option(right, 82px);
-    @include option(bottom, 54px);
+    @include option(width, 20px);
+    @include option(right, 86px);
+    @include option(bottom, 52px);
     animation-delay: 1s;
   }
   &__item_1 {
-    @include option(width, 69px);
-    @include option(right, 142px);
-    @include option(bottom, -88px);
+    @include option(width, 62px);
+    @include option(right, 146px);
+    @include option(bottom, -90px);
     animation-delay: 0s;
   }
   &__item_2 {
-    @include option(width, 53px);
-    @include option(right, 343px);
-    @include option(bottom, 57px);
+    @include option(width, 44px);
+    @include option(right, 348px);
+    @include option(bottom, 56px);
     animation-delay: 0.8s;
   }
   &__item_3 {
-    @include option(width, 37px);
-    @include option(right, 308px);
-    @include option(bottom, 197px);
+    @include option(width, 30px);
+    @include option(right, 310px);
+    @include option(bottom, 196px);
     animation-delay: 0.2s;
   }
 }
